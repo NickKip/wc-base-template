@@ -10,13 +10,8 @@ import { ClientEvents } from "events";
 
 export abstract class BaseComponent extends skate.Component<any> {
 
-    // @prop({ type: string, attribute: true, default: "nktest" })
-    protected managerName: string = "nktemp";
+    protected managerName: string = "wc";
     protected manager: ClientManager;
-
-    static is: string = null;
-
-    styleElements: JSXElement;
 
     // === Render lifecycle events === //
 
@@ -28,32 +23,17 @@ export abstract class BaseComponent extends skate.Component<any> {
 
     abstract componentMarkup(): JSXElement;
 
-    // === Static functions === //
-
-    static register(): void {
-
-        if (this.is === null) {
-
-            // tslint:disable-next-line no-console
-            console.error("Could not register component, please ensure that it has a static is property");
-            return;
-        }
-
-        const existing = customElements.get(this.is);
-        if (!existing) {
-
-            customElements.define(this.is, this);
-        }
-    }
-
     // === Private === //
 
     private async _bindManager(ev: Event): Promise<void> {
 
         this.manager = ClientManager.GetRegistration(this.managerName);
 
-        this._setupEventListeners();
-        await this._init();
+        if (this.manager) {
+
+            this._setupEventListeners();
+            await this._init();
+        }
     }
 
     // === Lifecycle Events === //

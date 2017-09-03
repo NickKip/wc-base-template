@@ -93,4 +93,4 @@ export class ClientManager {
 }
 
 window.ClientManager = ClientManager;
-window.mp = new ClientManager("mp");
+window.mp = new ClientManager("wc");

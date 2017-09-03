@@ -1,11 +1,9 @@
 import { BaseComponent } from "components/base/BaseComponent";
 import { JSXElement } from "components/base";
+import { component } from "components/base/decorators/component";
 
+@component({ tag: "wc-header" })
 export class Header extends BaseComponent {
-
-    static get is(): string {
-        return "wc-header";
-    }
 
     async _init(): Promise<void> {}
     _setupEventListeners(): void {}
@@ -28,5 +26,3 @@ export class Header extends BaseComponent {
         );
     }
 }
-
-Header.register();
