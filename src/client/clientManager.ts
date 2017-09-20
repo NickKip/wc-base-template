@@ -51,6 +51,7 @@ export class ClientManager {
         return Promise.resolve()
             .then(() => this._setStore(store))
             .then(() => this._setRouter())
+            .then(() => this._bindStartupEvents())
             .then(() => {
 
                 this.isReady = true;
@@ -78,6 +79,16 @@ export class ClientManager {
         });
     }
 
+    private _bindStartupEvents(): Promise<void> {
+
+        return new Promise<void>(resolve => {
+
+            document.addEventListener("click", () => this.emit(ClientEvents.ClosePopoutMenu));
+
+            resolve();
+        });
+    }
+
     // === Events === //
 
     // tslint:disable-next-line no-any
@@ -96,7 +107,7 @@ export class ClientManager {
     }
 
     // tslint:disable-next-line no-any
-    public emit(key: string, data: any): void {
+    public emit(key: string, data?: any): void {
 
         const events: Function[] = this.events[key];
 

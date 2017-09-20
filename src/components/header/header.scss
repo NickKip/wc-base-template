@@ -10,10 +10,15 @@
     :host div {
         display: flex;
         height: 100%;
+        color: white;
+
+        wc-button {
+            color: white;
+        }
     }
 
     :host h1 {
-        color: white;
+        // color: white;
         font-size: 18px;
         margin: auto;
     }
