@@ -1,0 +1,16 @@
+:host {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+
+    div.container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        div.temp {
+
+            margin: 20px auto;
+        }
+    }
+}

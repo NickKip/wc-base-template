@@ -1,14 +1,11 @@
 import { BaseComponent } from "components/base/BaseComponent";
-import { JSXElement, prop } from "components/base";
+import { JSXElement } from "components/base";
 import { component } from "components/base/decorators/component";
+import { Views } from "views";
+import { Header } from "components/header/header";
 
-@component({ tag: "wc-header" })
-export class Header extends BaseComponent {
-
-    // === Props === //
-
-    @prop({ type: String, attribute: false, default: "" })
-    title: string;
+@component({ tag: Views.Home.tag })
+export class Home extends BaseComponent {
 
     // === Init === //
 
@@ -21,7 +18,7 @@ export class Header extends BaseComponent {
 
         return (
             <style>
-                { require("./header.scss") }
+                { require("./home.scss") }
             </style>
         );
     }
@@ -30,7 +27,9 @@ export class Header extends BaseComponent {
 
         return (
             <div>
-                <h1>{ this.title }</h1>
+                <Header 
+                    title="Home"
+                />
             </div>
         );
     }

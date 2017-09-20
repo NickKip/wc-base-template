@@ -79,7 +79,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Header; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_base_BaseComponent__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_components_base_decorators_component__ = __webpack_require__(6);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -89,25 +97,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 
-class Header extends __WEBPACK_IMPORTED_MODULE_0_components_base_BaseComponent__["a" /* BaseComponent */] {
-    static get is() {
-        return "bot-header";
-    }
+
+let Header = class Header extends __WEBPACK_IMPORTED_MODULE_0_components_base_BaseComponent__["a" /* BaseComponent */] {
     _init() {
         return __awaiter(this, void 0, void 0, function* () { });
     }
     _setupEventListeners() { }
     componentStyles() {
-        return (window.__CTRender("style", null, __webpack_require__(6)));
+        return (window.__CTRender("style", null, __webpack_require__(7)));
     }
     componentMarkup() {
         return (window.__CTRender("div", null,
-            window.__CTRender("h1", null, "Gaming Weekend Stats 9")));
+            window.__CTRender("h1", null, "Header")));
     }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Header;
+};
+Header = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_components_base_decorators_component__["a" /* component */])({ tag: "wc-header" })
+], Header);
 
-Header.register();
 
 
 /***/ }),
@@ -134,27 +141,16 @@ window.__CTRender = window.skate.h;
 class BaseComponent extends __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__["Component"] {
     constructor() {
         super(...arguments);
-        // @prop({ type: string, attribute: true, default: "nktest" })
-        this.managerName = "nktemp";
-    }
-    // === Static functions === //
-    static register() {
-        if (this.is === null) {
-            // tslint:disable-next-line no-console
-            console.error("Could not register component, please ensure that it has a static is property");
-            return;
-        }
-        const existing = customElements.get(this.is);
-        if (!existing) {
-            customElements.define(this.is, this);
-        }
+        this.managerName = "wc";
     }
     // === Private === //
     _bindManager(ev) {
         return __awaiter(this, void 0, void 0, function* () {
             this.manager = __WEBPACK_IMPORTED_MODULE_1_client_clientManager__["a" /* ClientManager */].GetRegistration(this.managerName);
-            this._setupEventListeners();
-            yield this._init();
+            if (this.manager) {
+                this._setupEventListeners();
+                yield this._init();
+            }
         });
     }
     // === Lifecycle Events === //
@@ -184,7 +180,6 @@ class BaseComponent extends __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__["Com
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = BaseComponent;
 
-BaseComponent.is = null;
 function ensureArray(value) {
     return (value instanceof Array)
         ? value
@@ -263,7 +258,7 @@ class ClientManager {
 // === Static === //
 ClientManager.Registrations = new Map();
 window.ClientManager = ClientManager;
-window.mp = new ClientManager("mp");
+window.mp = new ClientManager("wc");
 
 
 /***/ }),
@@ -350,12 +345,35 @@ class Store {
 
 /***/ }),
 /* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = component;
+// tslint:disable no-any
+function component(definition) {
+    return (constructor) => {
+        const existing = customElements.get(definition.tag);
+        if (!existing) {
+            customElements.define(definition.tag, constructor);
+        }
+        return class extends constructor {
+            static get is() {
+                return definition.tag;
+            }
+        };
+    };
+}
+// tslint:enable no-any
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // css-to-string-loader: transforms styles from css-loader to a string output
 
 // Get the styles
-var styles = __webpack_require__(7);
+var styles = __webpack_require__(8);
 
 if (typeof styles === 'string') {
   // Return an existing string
@@ -366,10 +384,10 @@ if (typeof styles === 'string') {
 }
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(8)(undefined);
+exports = module.exports = __webpack_require__(9)(undefined);
 // imports
 
 
@@ -380,7 +398,7 @@ exports.push([module.i, ":host {\n  display: block;\n  width: 100vw;\n  height: 
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 /*

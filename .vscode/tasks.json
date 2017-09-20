@@ -5,14 +5,20 @@
     "tasks": [
         {
             "taskName": "echo",
-            "command": "webpack-dev-server",
+            "command": "npm",
             "type": "shell",
             "args": [
+                "run",
+                "start",
+                "--",
+                "--port",
+                "9999",
                 "--content-base",
                 "build/",
                 "--inline",
                 "--hot",
-                "--open"
+                "--open",
+                "--history-api-fallback"
             ],
             "group": {
                 "kind": "build",

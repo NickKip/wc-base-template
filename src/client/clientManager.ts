@@ -1,5 +1,7 @@
 import { Store } from "store/store";
 import { ClientEvents } from "events";
+import { Router } from "client/router/router";
+import { Views, ViewRegistration } from "views";
 
 export class ClientManager {
 
@@ -20,6 +22,7 @@ export class ClientManager {
     // === Private === //
 
     private name: string;
+    private appContainer: string;
 
     // Todo: proper type defs
     private events: { [key: string]: Function[] } = {};
@@ -28,12 +31,14 @@ export class ClientManager {
 
     public isReady: boolean = false;
     public store: Store;
+    public router: Router;
 
     // === Constructor === //
 
-    constructor(name: string) {
+    constructor(name: string, appContainer: string, defaultView: string) {
 
         this.name = name;
+        this.appContainer = appContainer;
         ClientManager.Registrations.set(this.name, this);
 
         const store: Store = new Store(this.name);
@@ -45,6 +50,7 @@ export class ClientManager {
 
         return Promise.resolve()
             .then(() => this._setStore(store))
+            .then(() => this._setRouter())
             .then(() => {
 
                 this.isReady = true;
@@ -58,6 +64,17 @@ export class ClientManager {
 
             this.store = store;
             this.store.init().then(() => resolve());
+        });
+    }
+
+    private _setRouter(): Promise<void> {
+
+        return new Promise<void>(resolve => {
+
+            const defaultView: ViewRegistration = Object.keys(Views).map(x => Views[x]).find(x => x.default);
+
+            this.router = new Router(this.appContainer, defaultView);
+            resolve();
         });
     }
 
@@ -93,4 +110,4 @@ export class ClientManager {
 }
 
 window.ClientManager = ClientManager;
-window.mp = new ClientManager("wc");
+window.wc = new ClientManager("wc", "body", "view-login");

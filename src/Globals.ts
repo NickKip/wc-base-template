@@ -6,6 +6,12 @@ interface Window {
 
     BotWebSocketHandler: any;
     ClientManager: any;
-    mp: any;
+    wc: any;
     PouchDB: any;
+}
+
+interface HistoryAPIEvent extends Event {
+
+    // tslint:disable-next-line no-any
+    state: any;
 }

@@ -1,3 +1,5 @@
 import { ClientManager } from "client/clientManager";
 
-export { Header } from "components/header/header";
+// export * from "views/register";
+
+export * from "views";

@@ -1,10 +1,12 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var webpack = require("webpack");
+// var ExtractTextPlugin = require("extract-text-webpack-plugin");
+// var webpack = require("webpack");
 var path = require("path");
 
 module.exports = {
 
-    entry: "./src/client/index.ts",
+    entry: {
+        "app": ["./src/client/index.ts"]
+    },
 
     output: {
         filename: "client.js",
