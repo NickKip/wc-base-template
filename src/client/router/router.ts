@@ -33,8 +33,6 @@ export class Router {
 
     private _firstLoad(): void {
 
-        const path: string = window.location.pathname.replace("/", "");
-
         // We are running inside Electron
         if (window.process && window.process.type) {
 
@@ -56,16 +54,16 @@ export class Router {
                     path = "";
                 }
             }
-        }
 
-        if (path === "") {
+            if (path === "") {
 
-            this._updateDom(this.defaultView);
-        }
-        else {
+                this._updateDom(this.defaultView);
+            }
+            else {
 
-            const view: ViewRegistration = Object.keys(Views).map(x => Views[x]).find(x => x.uri === path);
-            this._updateDom(view);
+                const view: ViewRegistration = Object.keys(Views).map(x => Views[x]).find(x => x.uri === path);
+                this._updateDom(view);
+            }
         }
     }
 
