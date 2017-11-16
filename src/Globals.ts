@@ -8,6 +8,7 @@ interface Window {
     ClientManager: any;
     wc: any;
     PouchDB: any;
+    process: any;
 }
 
 interface HistoryAPIEvent extends Event {

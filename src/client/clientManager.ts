@@ -1,5 +1,5 @@
 import { Store } from "store/store";
-import { ClientEvents } from "events";
+import { ClientEvents, EventContainer, HandlerDescriptor } from "events";
 import { Router } from "client/router/router";
 import { Views, ViewRegistration } from "views";
 
@@ -24,8 +24,7 @@ export class ClientManager {
     private name: string;
     private appContainer: string;
 
-    // Todo: proper type defs
-    private events: { [key: string]: Function[] } = {};
+    private events: EventContainer = {};
 
     // === Public === //
 
@@ -74,7 +73,7 @@ export class ClientManager {
 
             const defaultView: ViewRegistration = Object.keys(Views).map(x => Views[x]).find(x => x.default);
 
-            this.router = new Router(this.appContainer, defaultView);
+            this.router = new Router(this.appContainer, defaultView, (view: ViewRegistration) => this.unloadEvents(view));
             resolve();
         });
     }
@@ -92,29 +91,45 @@ export class ClientManager {
     // === Events === //
 
     // tslint:disable-next-line no-any
-    public on(key: string, handler: any): void {
+    public on(key: string, handler: any, global: boolean = false): void {
 
-        const events: Function[] = this.events[key];
+        const currPage: string = this.router.currentPage.tag;
+
+        const events: HandlerDescriptor[] = this.events[key];
 
         if (events) {
 
-            events.push(handler);
+            events.push({
+                page: !global ? currPage : null,
+                handler: handler
+            });
         }
         else {
 
-            this.events[key] = [handler];
+            this.events[key] = [{
+                page: !global ? currPage : null,
+                handler: handler
+            }];
         }
     }
 
     // tslint:disable-next-line no-any
     public emit(key: string, data?: any): void {
 
-        const events: Function[] = this.events[key];
+        const events: HandlerDescriptor[] = this.events[key];
 
         if (events) {
 
-            events.map(x => x(data));
+            events.map(x => x.handler(data));
         }
+    }
+
+    private unloadEvents(prevView: ViewRegistration): void {
+
+        Object.keys(this.events).map(x => {
+
+            this.events[x] = this.events[x].filter(e => e.page !== prevView.tag);
+        });
     }
 
     // === Public === //

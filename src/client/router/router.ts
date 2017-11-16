@@ -6,11 +6,17 @@ export class Router {
 
     private appContainer: string;
     private defaultView: ViewRegistration;
+    private routeCallback: (view: ViewRegistration) => void;
+
+    // === Public === //
+
+    public currentPage: ViewRegistration;
 
     // === Constructor === //
 
-    constructor(appContainer: string, defaultView: ViewRegistration) {
+    constructor(appContainer: string, defaultView: ViewRegistration, routeCallback: (view: ViewRegistration) => void) {
 
+        this.routeCallback = routeCallback;
         this.appContainer = appContainer;
         this.defaultView = defaultView;
         this._bindEvents();
@@ -29,6 +35,29 @@ export class Router {
 
         const path: string = window.location.pathname.replace("/", "");
 
+        // We are running inside Electron
+        if (window.process && window.process.type) {
+
+            this._updateDom(this.defaultView);
+        }
+        else {
+
+            let path: string = "";
+
+            const idx: number = window.location.pathname.lastIndexOf("/");
+
+            if (idx > -1) {
+
+                path = window.location.pathname.substring(idx + 1);
+
+                if (path === "index.html") {
+
+                    // We are in Cordova and it's loading the default view
+                    path = "";
+                }
+            }
+        }
+
         if (path === "") {
 
             this._updateDom(this.defaultView);
@@ -45,6 +74,9 @@ export class Router {
         const container: HTMLElement = document.getElementById(this.appContainer);
 
         if (container) {
+
+            this.routeCallback(this.currentPage);
+            this.currentPage = view;
 
             while (container.childNodes.length > 0) {
 

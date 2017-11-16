@@ -1,3 +1,14 @@
+export interface EventContainer {
+
+    [key: string]: HandlerDescriptor[];
+}
+
+export interface HandlerDescriptor {
+
+    handler: Function;
+    page?: string;
+}
+
 export const enum ClientEvents {
 
     // Client Manager Ready

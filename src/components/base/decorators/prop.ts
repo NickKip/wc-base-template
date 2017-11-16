@@ -3,6 +3,7 @@ import * as skate from "skatejs/src/index";
 // tslint:disable no-any
 
 type PropType = "string" | "number" | "object" | "array" | "boolean";
+type PropFunc = (x: any) => any;
 const identityFn: any = (x: any) => x;
 
 export function prop(property: any): PropertyDecorator {
@@ -16,7 +17,7 @@ export function prop(property: any): PropertyDecorator {
         const configType: PropType = parseType(type);
 
         // reference the skatejs prop function, e.g. prop.string
-        const skatePropTypeFn: skate.ComponentProps<any, any> = skate.prop[configType] || identityFn;
+        const skatePropTypeFn: PropFunc = skate.prop[configType] || identityFn;
 
         // get constructor of element
         const ctor: any = target.constructor as typeof skate.Component;
@@ -25,7 +26,7 @@ export function prop(property: any): PropertyDecorator {
         const existingProps: skate.ComponentProps<any, any> = (ctor.props || {}) as skate.ComponentProps<any, any>;
 
         // concatenate all props together
-        const newProps: Array<skate.ComponentProps<any, any>> = {
+        const newProps: any = {
             ...existingProps,
             ...{[propertyKey]: skatePropTypeFn(skPropConfig)}
         };
