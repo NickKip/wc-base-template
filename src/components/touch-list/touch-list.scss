@@ -1,0 +1,64 @@
+@import "styles/default.scss";
+@import "styles/list-styles.scss";
+
+:host {
+    display: flex;
+    flex: 1 1;
+
+    div.container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        div.row {
+            position: relative;
+            height: auto;
+
+            div.background {
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 0;
+                height: 100%;
+                display: flex;
+                background-color: darken(#fff, 5%);
+
+                ct-button {
+                    margin: auto;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            div.foreground {
+                display: flex;
+                flex: 1 0 auto;
+                background-color: var(--default-bg-color);
+                width: 100%;
+                position: relative;
+                z-index: 100;
+            }
+        }
+
+        div.empty {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            flex: 1;
+            font-size: 14px;
+            padding: 20px 0;
+
+            p {
+                margin: auto auto 20px auto;
+                text-align: center;
+                width: 100%;
+            }
+
+            wc-button {
+                min-width: 60%;
+                margin: 0 auto auto auto;
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import { State } from "store/state";
+import { MessageEntity } from "models";
 
 type PouchResponse = {
 
@@ -37,6 +38,32 @@ export class Store {
     public getFromState<T>(key: string): T {
 
         return this.state[key] || null;
+    }
+
+    // === Message Queue === //
+
+    public async saveToMessageQueue(messageEntity: MessageEntity): Promise<void> {
+
+        this.state.messageQueue.push(messageEntity);
+        return await this._saveToPersistent();
+    }
+
+    public async removeFromMessageQueue(messageEntity: MessageEntity): Promise<void> {
+
+        const idx: number = this.state.messageQueue.findIndex(x => x.id === messageEntity.id);
+
+        if (idx > -1) {
+
+            this.state.messageQueue.splice(idx, 1);
+            return await this._saveToPersistent();
+        }
+
+        return;
+    }
+
+    public getMessageQueue(): MessageEntity[] {
+
+        return this.state.messageQueue;
     }
 
     // === Private === //
@@ -100,7 +127,8 @@ export class Store {
         return {
 
             _id: this.name,
-            _rev: ""
+            _rev: "",
+            messageQueue: []
         };
     }
 }

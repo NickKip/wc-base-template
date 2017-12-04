@@ -1,0 +1,58 @@
+@import "styles/default.scss";
+
+:host {
+    display: block;
+    max-height: 30px;
+    min-width: 35px;
+
+    div.container {
+        display: flex;
+        padding: 5px 8px;
+        font-size: 12px;
+        border-radius: 4px;
+
+        wc-icon {
+            margin: auto 3px auto 0;
+        }
+
+        span {
+            margin: auto 0;
+        }
+
+        &.primary {
+            background-color: var(--app-primary-button-color);
+            color: var(--app-primary-button-font);
+        }
+
+        &.secondary {
+            background-color: var(--app-secondary-button-color);
+            color: var(--app-secondary-button-font);
+            border: 1px solid var(--app-secondary-button-border);
+        }
+
+        &.transparent {
+            background-color: transparent;
+        }
+
+        &.danger {
+            background-color: var(--app-danger-button-color);
+            color: var(--app-danger-button-color-font);
+        }
+
+        &.accentOne {
+            background-color: var(--accent-color-one);
+            color: var(--accent-color-one-font);
+        }
+
+        &.accentTwo {
+            background-color: var(--accent-color-two);
+            color: var(--accent-color-two-font);
+        }
+
+        &.accentThree {
+            background-color: var(--accent-color-three);
+            color: var(--accent-color-three-font);
+        }
+
+    }
+}

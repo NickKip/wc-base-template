@@ -1,0 +1,77 @@
+@import "styles/default.scss";
+
+:host {
+    display: block;
+    height: 40px;
+    width: 40px;
+    color: inherit;
+
+    button {
+        position: relative;
+        background: transparent;
+        color: inherit;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        font-size: inherit;
+        font-weight: inherit;
+        outline: none;
+        cursor: pointer;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        wc-icon {
+            margin: auto;
+        }
+
+        &.primary {
+            background-color: var(--app-primary-button-color);
+            color: var(--app-primary-button-font);
+        }
+
+        &.secondary {
+            background-color: var(--app-secondary-button-color);
+            color: var(--app-secondary-button-font);
+        }
+
+        &.success {
+            background-color: var(--app-success-button-color);
+            color: var(--app-success-button-color-font);
+        }
+
+        &.danger {
+            background-color: var(--app-danger-button-color);
+            color: var(--app-danger-button-color-font);
+        }
+
+        &.transparent {
+            background-color: transparent;
+        }
+
+        &.transparentLight {
+            background-color: transparent;
+            color: white;
+        }
+
+        &.accentOne {
+            background-color: var(--accent-color-one);
+            color: var(--accent-color-one-font);
+        }
+
+        &.accentTwo {
+            background-color: var(--accent-color-two);
+            color: var(--accent-color-two-font);
+        }
+
+        &.accentThree {
+            background-color: var(--accent-color-three);
+            color: var(--accent-color-three-font);
+        }
+
+        &:disabled {
+            background-color: var(--default-bg-color-dark);
+        }
+
+    }
+}

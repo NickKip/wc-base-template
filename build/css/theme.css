@@ -13,4 +13,8 @@ html {
 
     /* BORDERS */
     --default-border-color: #d9d9d9;
+
+    /* COLOURS */
+    --primary-color: #0984ce;
+    --primary-color-font: white;
 }

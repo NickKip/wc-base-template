@@ -1,0 +1,45 @@
+@import "styles/default.scss";
+
+:host {
+
+    div.container {
+
+        display: flex;
+        flex: 0 0;
+        height: 8vh;
+        background-color: var(--default-bg-color-dark);
+        border-top: 1px solid var(--default-border-color);
+
+        div.tab {
+            flex: 1 1 50%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            color: var(--default-font-color-light);
+
+            &.selected {
+
+                div.icon, div.text {
+                    color: var(--primary-color);
+                }
+            }
+
+            div.icon {
+                margin: auto auto 2px auto;
+            }
+
+            div.text {
+                margin: auto 0;
+                text-align: center;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 450px) {
+
+    :host {
+        display: none;
+    }
+}

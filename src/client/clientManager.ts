@@ -1,7 +1,11 @@
+import * as Handlers from "handlers";
 import { Store } from "store/store";
 import { ClientEvents, EventContainer, HandlerDescriptor } from "events";
 import { Router } from "client/router/router";
 import { Views, ViewRegistration } from "views";
+import { WSEventArgs } from "events/event-args";
+import { AppConfig } from "client/config/config";
+import { RestClient } from "client/rest-client/rest-client";
 
 export class ClientManager {
 
@@ -26,17 +30,24 @@ export class ClientManager {
 
     private events: EventContainer = {};
 
+    // Message Events
+    private _messageHandlers: Map<string, Handlers.BaseHandler> = new Map<string, Handlers.BaseHandler>();
+    private _messageProcessorQueue: Promise<void> = Promise.resolve();
+
     // === Public === //
 
     public isReady: boolean = false;
+    public config: AppConfig;
     public store: Store;
+    public rest: RestClient;
     public router: Router;
 
     // === Constructor === //
 
-    constructor(name: string, appContainer: string, defaultView: string) {
+    constructor(name: string, appContainer: string, defaultView: string, config: AppConfig) {
 
         this.name = name;
+        this.config = config;
         this.appContainer = appContainer;
         ClientManager.Registrations.set(this.name, this);
 
@@ -49,6 +60,7 @@ export class ClientManager {
 
         return Promise.resolve()
             .then(() => this._setStore(store))
+            .then(() => this._setRestClient())
             .then(() => this._setRouter())
             .then(() => this._bindStartupEvents())
             .then(() => {
@@ -64,6 +76,15 @@ export class ClientManager {
 
             this.store = store;
             this.store.init().then(() => resolve());
+        });
+    }
+
+    private _setRestClient(): Promise<void> {
+
+        return new Promise<void>(resolve => {
+
+            this.rest = new RestClient(this.config.rest, this.store);
+            resolve();
         });
     }
 
@@ -132,8 +153,37 @@ export class ClientManager {
         });
     }
 
+    private _handleNewWSMessage(message: WSEventArgs): void {
+
+        const handler: Handlers.BaseHandler = this._messageHandlers.get(message.action);
+
+        if (!handler) {
+
+            return;
+        }
+
+        this._messageProcessorQueue = this._messageProcessorQueue
+            .then(async () => {
+
+                try {
+
+                    return await handler.callHandleMessage(message);
+                }
+                catch (ex) {
+
+                    // tslint:disable-next-line no-console
+                    console.error("Error processing message", ex);
+                }
+        })
+        .catch(ex => {
+
+            // tslint:disable-next-line no-console
+            console.error("Error processing message", ex);
+        });
+    }
+
     // === Public === //
 }
 
 window.ClientManager = ClientManager;
-window.wc = new ClientManager("wc", "body", "view-login");
+window.wc = new ClientManager("wc", "body", "view-login", {});
