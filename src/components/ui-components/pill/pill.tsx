@@ -1,8 +1,6 @@
-import { BaseComponent } from "components/base/BaseComponent";
-import { JSXElement, prop, component } from "components/base";
-import { IconDefinition } from "models";
-import { buildStyles } from "client/utils";
-import { Icon } from "components/Icon/Icon";
+import { BaseComponent, JSXElement, prop, component, Icon } from "../../";
+import { IconDefinition } from "../../../models";
+import { buildStyles } from "../../../client";
 
 @component({ tag: "wc-pill" })
 export class Pill extends BaseComponent {

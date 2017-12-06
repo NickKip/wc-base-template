@@ -1,4 +1,4 @@
-import { MessageEntity } from "models";
+import { MessageEntity } from "../models";
 
 export interface State {
 

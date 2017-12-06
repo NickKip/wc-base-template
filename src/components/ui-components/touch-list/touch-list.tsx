@@ -1,9 +1,7 @@
-import { BaseComponent } from "components/base/BaseComponent";
-import { JSXElement, prop, component } from "components/base";
-import { buildStyles } from "client/utils";
-import { Button } from "components/button/button";
-import { slideToReveal, slideToRevealEnd } from "client/slideReveal";
-import { IconDefinition } from "models";
+import { BaseComponent, JSXElement, prop, component, Button } from "../../";
+import { buildStyles } from "../../../client";
+import { slideToReveal, slideToRevealEnd } from "../../../client/slideReveal";
+import { IconDefinition } from "../../../models";
 
 interface ButtonDefinition<T> {
 

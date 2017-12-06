@@ -1,6 +1,6 @@
-import { RestConfig } from "client/config/config";
-import { Store } from "store/store";
-import { ApiResult, QueryParam, HttpVerb, RequestBody, MessageEntity } from "models";
+import { RestConfig } from "../config/config";
+import { Store } from "../../store/store";
+import { ApiResult, QueryParam, HttpVerb, RequestBody, MessageEntity } from "../../models";
 
 export class RestClient {
 

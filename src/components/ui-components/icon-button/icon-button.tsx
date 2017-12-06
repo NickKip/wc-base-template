@@ -1,8 +1,6 @@
-import { BaseComponent } from "components/base/BaseComponent";
-import { JSXElement, prop, component } from "components/base";
-import { IconDefinition, Icons } from "models";
-import { Icon } from "components/Icon/Icon";
-import { buildStyles } from "client/utils";
+import { BaseComponent, JSXElement, prop, component, Icon } from "../../";
+import { IconDefinition, Icons } from "../../../models";
+import { buildStyles } from "../../../client";
 
 @component({ tag: "wc-icon-button" })
 export class IconButton extends BaseComponent {

@@ -1,8 +1,6 @@
 // tslint:disable no-any
 
-declare var require: any;
-
-interface Window {
+export interface InfinityWindow extends Window {
 
     BotWebSocketHandler: any;
     ClientManager: any;
@@ -11,7 +9,7 @@ interface Window {
     process: any;
 }
 
-interface HistoryAPIEvent extends Event {
+export interface HistoryAPIEvent extends Event {
 
     // tslint:disable-next-line no-any
     state: any;

@@ -1,11 +1,12 @@
-import * as Handlers from "handlers";
-import { Store } from "store/store";
-import { ClientEvents, EventContainer, HandlerDescriptor } from "events";
-import { Router } from "client/router/router";
-import { Views, ViewRegistration } from "views";
-import { WSEventArgs } from "events/event-args";
-import { AppConfig } from "client/config/config";
-import { RestClient } from "client/rest-client/rest-client";
+import * as Handlers from "../handlers";
+import { Store } from "../store/store";
+import { ClientEvents, EventContainer, HandlerDescriptor } from "../events";
+import { Router } from "../client/router/router";
+import { ViewRegistration, ViewRegistrations } from "../views";
+import { WSEventArgs } from "../events/event-args";
+import { AppConfig } from "../client/config/config";
+import { RestClient } from "../client/rest-client/rest-client";
+import { AppClasses } from "../models";
 
 export class ClientManager {
 
@@ -41,17 +42,19 @@ export class ClientManager {
     public store: Store;
     public rest: RestClient;
     public router: Router;
+    public views: ViewRegistrations;
 
     // === Constructor === //
 
-    constructor(name: string, appContainer: string, defaultView: string, config: AppConfig) {
+    constructor(appContainer: string, defaultView: string, config: AppConfig, views: ViewRegistrations, appClasses: AppClasses) {
 
-        this.name = name;
+        this.name = "infinityFramework";
         this.config = config;
         this.appContainer = appContainer;
+        this.views = views;
         ClientManager.Registrations.set(this.name, this);
 
-        const store: Store = new Store(this.name);
+        const store: Store = new appClasses.store(this.name);
 
         this.bootstrap(store);
     }
@@ -92,9 +95,7 @@ export class ClientManager {
 
         return new Promise<void>(resolve => {
 
-            const defaultView: ViewRegistration = Object.keys(Views).map(x => Views[x]).find(x => x.default);
-
-            this.router = new Router(this.appContainer, defaultView, (view: ViewRegistration) => this.unloadEvents(view));
+            this.router = new Router(this.appContainer, this.views, (view: ViewRegistration) => this.unloadEvents(view));
             resolve();
         });
     }
@@ -184,6 +185,3 @@ export class ClientManager {
 
     // === Public === //
 }
-
-window.ClientManager = ClientManager;
-window.wc = new ClientManager("wc", "body", "view-login", {});

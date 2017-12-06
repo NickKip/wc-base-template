@@ -1,2 +1,2 @@
-export { component } from "components/base/decorators/component";
-export { prop } from "components/base/decorators/prop";
+export { component } from "./component";
+export { prop } from "./prop";

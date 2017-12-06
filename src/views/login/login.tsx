@@ -1,8 +1,5 @@
-import { BaseComponent } from "components/base/BaseComponent";
-import { JSXElement } from "components/base";
-import { component } from "components/base/decorators/component";
-import { Views } from "views";
-import { Header } from "components/header/header";
+import { BaseComponent, JSXElement, prop, component, Header } from "components";
+import { Views } from "views/views";
 
 @component({ tag: Views.Login.tag })
 export class Login extends BaseComponent {

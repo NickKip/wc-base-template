@@ -1,6 +1,5 @@
-import { ClientManager } from "client/clientManager";
-import { ClientEvents } from "events";
-import { EventArgs, WSEventArgs } from "events/event-args";
+import { ClientManager } from "../client/clientManager";
+import { ClientEvents, EventArgs, WSEventArgs } from "../events";
 
 export abstract class BaseHandler {
 

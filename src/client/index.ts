@@ -1,5 +1,5 @@
-import { ClientManager } from "client/clientManager";
+import { ClientManager } from "./clientManager";
 
-// export * from "views/register";
-
-export * from "views";
+export { AppConfig, RestConfig } from "./config/config";
+export { ClientManager } from "./clientManager";
+export { buildStyles, getCSSVariable } from "./utils";

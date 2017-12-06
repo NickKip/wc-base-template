@@ -1,4 +1,4 @@
-import { EventArgs } from "events/event-args/event-args";
+import { EventArgs } from "../event-args";
 
 export class WSEventArgs extends EventArgs {
 

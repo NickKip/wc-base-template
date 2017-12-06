@@ -1,8 +1,6 @@
-import { BaseComponent } from "components/base/BaseComponent";
-import { JSXElement, prop, component } from "components/base";
-import { Button } from "components/button/button";
-import { ClientEvents } from "events";
-import { buildStyles } from "client/utils";
+import { BaseComponent, JSXElement, prop, component, Button } from "../../";
+import { ClientEvents } from "../../../events";
+import { buildStyles } from "../../../client";
 
 @component({ tag: "wc-popout-menu" })
 export class PopoutMenu extends BaseComponent {

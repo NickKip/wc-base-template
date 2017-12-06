@@ -8,4 +8,6 @@ declare namespace JSX {
     }
 }
 
+declare const require: any;
+
 // tslint:enable no-any

@@ -1,17 +1,17 @@
 import * as skate from "skatejs/src/index";
-import { JSXElement } from "components/base";
-import { ClientManager } from "client/clientManager";
-import { ClientEvents } from "events";
+import { JSXElement } from "./";
+import { ClientManager } from "../../client/clientManager";
+import { ClientEvents } from "../../events";
 
 // tslint:disable typedef
 // tslint:disable no-any
 
 (<any>window).__CTRender = (<any>window).skate.h;
 
-export abstract class BaseComponent extends skate.Component<any> {
+export abstract class BaseComponent<T extends ClientManager = ClientManager> extends skate.Component<any> {
 
-    protected managerName: string = "wc";
-    protected manager: ClientManager;
+    protected managerName: string = "infinityFramework";
+    protected manager: T;
 
     // === Render lifecycle events === //
 
@@ -27,7 +27,7 @@ export abstract class BaseComponent extends skate.Component<any> {
 
     private async _bindManager(ev: Event): Promise<void> {
 
-        this.manager = ClientManager.GetRegistration(this.managerName);
+        this.manager = ClientManager.GetRegistration(this.managerName) as T;
 
         if (this.manager) {
 
@@ -42,7 +42,7 @@ export abstract class BaseComponent extends skate.Component<any> {
 
         super.connectedCallback();
 
-        const manager: ClientManager = ClientManager.GetRegistration(this.managerName);
+        const manager: T = ClientManager.GetRegistration(this.managerName) as T;
 
         if (!manager || !manager.isReady) {
 

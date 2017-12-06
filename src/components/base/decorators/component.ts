@@ -1,5 +1,5 @@
-import { JSXElement } from "components/base";
-import { BaseComponent } from "components/base/BaseComponent";
+import { JSXElement } from "../";
+import { BaseComponent } from "../BaseComponent";
 
 export interface ComponentDefinition {
 

@@ -1,10 +1,12 @@
-import { Views, ViewRegistration } from "views/register";
+import { ViewRegistration, ViewRegistrations } from "../../views";
+import { InfinityWindow, HistoryAPIEvent } from "../../Globals";
 
 export class Router {
 
     // === Private === //
 
     private appContainer: string;
+    private views: ViewRegistrations;
     private defaultView: ViewRegistration;
     private routeCallback: (view: ViewRegistration) => void;
 
@@ -14,11 +16,12 @@ export class Router {
 
     // === Constructor === //
 
-    constructor(appContainer: string, defaultView: ViewRegistration, routeCallback: (view: ViewRegistration) => void) {
+    constructor(appContainer: string, views: ViewRegistrations, routeCallback: (view: ViewRegistration) => void) {
 
         this.routeCallback = routeCallback;
         this.appContainer = appContainer;
-        this.defaultView = defaultView;
+        this.views = views;
+        this.defaultView = Object.keys(this.views).map(x => this.views[x]).find(x => x.default);
         this._bindEvents();
 
         this._firstLoad();
@@ -34,7 +37,7 @@ export class Router {
     private _firstLoad(): void {
 
         // We are running inside Electron
-        if (window.process && window.process.type) {
+        if ((window as InfinityWindow).process && (window as InfinityWindow).process.type) {
 
             this._updateDom(this.defaultView);
         }
@@ -61,7 +64,7 @@ export class Router {
             }
             else {
 
-                const view: ViewRegistration = Object.keys(Views).map(x => Views[x]).find(x => x.uri === path);
+                const view: ViewRegistration = Object.keys(this.views).map(x => this.views[x]).find(x => x.uri === path);
                 this._updateDom(view);
             }
         }

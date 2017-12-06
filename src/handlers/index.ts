@@ -1,7 +1,7 @@
-import { ClientManager } from "client/clientManager";
-import { BaseHandler } from "handlers/base-handler";
+import { ClientManager } from "../client/clientManager";
+import { BaseHandler } from "./base-handler";
 
-export { BaseHandler } from "handlers/base-handler";
+export { BaseHandler } from "./base-handler";
 
 export function get(clientManager: ClientManager): BaseHandler[] {
 

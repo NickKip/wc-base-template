@@ -1,6 +1,5 @@
-import { SocketConfig, WSMessageWrapper, WSOutboundMessage } from "models";
-import { WSEventArgs } from "events/event-args/ws-event-args";
-import { ClientEvents } from "events";
+import { SocketConfig, WSMessageWrapper, WSOutboundMessage } from "../../models";
+import { ClientEvents, WSEventArgs } from "../../events";
 
 interface WebSocketEvent extends Event {
 

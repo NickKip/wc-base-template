@@ -1,11 +1,6 @@
-import { BaseComponent } from "components/base/BaseComponent";
-import { JSXElement, prop } from "components/base";
-import { component } from "components/base/decorators/component";
-import { Views, ViewRegistration } from "views";
-import { Header } from "components/header/header";
-import { Button } from "components/button/button";
-import { Icons, IconDefinition, TabbedNavigatorButton } from "models";
-import { Icon } from "components/Icon/Icon";
+import { BaseComponent, JSXElement, prop, component, Icon, Header, Button } from "../../";
+import { ViewRegistration } from "../../../views";
+import { Icons, IconDefinition, TabbedNavigatorButton } from "../../../models";
 
 @component({ tag: "wc-tab-navigator" })
 export class TabNavigator extends BaseComponent {

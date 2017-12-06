@@ -1,5 +1,6 @@
-import { State } from "store/state";
-import { MessageEntity } from "models";
+import { State } from "./state";
+import { MessageEntity } from "../models";
+import { InfinityWindow } from "../Globals";
 
 type PouchResponse = {
 
@@ -8,12 +9,12 @@ type PouchResponse = {
     rev: string;
 };
 
-export class Store {
+export abstract class Store<T extends State = State> {
 
-    // === Private === //
+    // === Protected === //
 
-    private state: State;
-    private name: string;
+    protected state: T;
+    protected name: string;
 
     // tslint:disable-next-line no-any
     private _db: any;
@@ -25,7 +26,7 @@ export class Store {
     constructor(name: string) {
 
         this.name = name;
-        this._db = new window.PouchDB(name);
+        this._db = new (window as InfinityWindow).PouchDB(name);
     }
 
     // === Public === //
@@ -66,9 +67,9 @@ export class Store {
         return this.state.messageQueue;
     }
 
-    // === Private === //
+    // === Protected === //
 
-    private async _saveToPersistent(): Promise<void> {
+    protected async _saveToPersistent(): Promise<void> {
 
         clearTimeout(this._saveDebouncer);
 
@@ -96,7 +97,7 @@ export class Store {
         }, 500);
     }
 
-    private async _getFromPersistent(): Promise<State> {
+    protected async _getFromPersistent(): Promise<T> {
 
         if (this._db) {
 
@@ -106,7 +107,7 @@ export class Store {
             }
             catch (ex) {
 
-                const state: State = this._generateInitialState();
+                const state: T = this._generateInitialState();
 
                 const res: PouchResponse = await this._db.put(state);
                 state._rev = res.rev;
@@ -116,19 +117,11 @@ export class Store {
 
         } else {
 
-            const state: State = localStorage.getItem(this.name)
+            const state: T = localStorage.getItem(this.name)
                 ? JSON.parse(localStorage.getItem(this.name))
                 : this._generateInitialState();
         }
     }
 
-    private _generateInitialState(): State {
-
-        return {
-
-            _id: this.name,
-            _rev: "",
-            messageQueue: []
-        };
-    }
+    protected abstract _generateInitialState(): T;
 }

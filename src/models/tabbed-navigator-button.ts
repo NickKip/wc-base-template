@@ -1,5 +1,5 @@
-import { IconDefinition } from "models/icon";
-import { ViewRegistration } from "views/register";
+import { IconDefinition } from "./icon";
+import { ViewRegistration } from "../views";
 
 export interface TabbedNavigatorButton {
 

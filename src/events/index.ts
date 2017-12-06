@@ -18,3 +18,5 @@ export const enum ClientEvents {
     OpenPopoutMenu = "open-popout-menu",
     ClosePopoutMenu = "close-popout-menu"
 }
+
+export * from "./event-args";

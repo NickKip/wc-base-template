@@ -1,8 +1,5 @@
-import { BaseComponent } from "components/base/BaseComponent";
-import { JSXElement, prop } from "components/base";
-import { component } from "components/base/decorators/component";
-import { Icon } from "components/Icon/Icon";
-import { buildStyles, getCSSVariable } from "client/utils";
+import { BaseComponent, JSXElement, prop, component, Icon } from "../../";
+import { buildStyles, getCSSVariable } from "../../../client";
 
 @component({ tag: "wc-header" })
 export class Header extends BaseComponent {

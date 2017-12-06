@@ -1,4 +1,4 @@
-@import "styles/default.scss";
+@import "../../../styles/default.scss";
 
 :host {
     display: block;
@@ -43,7 +43,7 @@
 
         &.primary {
             background-color: var(--app-primary-button-color);
-            color: white;
+            color: var(--app-primary-button-font);
         }
 
         &.secondary {
