@@ -3,7 +3,9 @@ export {
     RestConfig,
     ClientManager,
     buildStyles,
-    getCSSVariable
+    getCSSVariable,
+    RestClient,
+    WebSocketClient
 } from "./client";
 
 export {
@@ -17,6 +19,7 @@ export {
     IconButton,
     Pill,
     PopoutMenu,
+    SearchBox,
     TabNavigator,
     TouchList
 } from "./components";
@@ -36,7 +39,9 @@ export {
 
 export {
     AppClasses,
+    HandlerClasses,
     Icons,
+    IconContainer,
     IconDefinition,
     TabbedNavigatorButton,
     HttpVerb,
@@ -46,7 +51,8 @@ export {
     MessageEntity,
     SocketConfig,
     WSMessageWrapper,
-    WSOutboundMessage
+    WSOutboundMessage,
+    RequestHeaders
 } from "./models";
 
 export { State } from "./store/state";

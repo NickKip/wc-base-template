@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -68,11 +68,11 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(7);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__base__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_0__base__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_0__base__["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ui_components__ = __webpack_require__(20);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_0__base__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_0__base__["c"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ui_components__ = __webpack_require__(24);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__ui_components__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__ui_components__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__ui_components__["c"]; });
@@ -81,6 +81,7 @@
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_1__ui_components__["f"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_1__ui_components__["g"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_1__ui_components__["h"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_1__ui_components__["i"]; });
 
 
 
@@ -174,9 +175,15 @@ function toComment(sourceMap) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__clientManager__ = __webpack_require__(4);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__clientManager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(14);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__utils__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__utils__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rest_client_rest_client__ = __webpack_require__(14);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__rest_client_rest_client__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__websockets_ws_client__ = __webpack_require__(17);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__websockets_ws_client__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(20);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__utils__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_3__utils__["b"]; });
+
+
 
 
 
@@ -186,9 +193,9 @@ function toComment(sourceMap) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icon__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icon__ = __webpack_require__(15);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__icon__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rest_client__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rest_client__ = __webpack_require__(16);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__rest_client__["a"]; });
 
 
@@ -199,9 +206,7 @@ function toComment(sourceMap) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__client_router_router__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__client_rest_client_rest_client__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__client_router_router__ = __webpack_require__(13);
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -211,24 +216,25 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 
-
-
 class ClientManager {
     // === Constructor === //
-    constructor(name, appContainer, defaultView, config, views) {
+    constructor(appContainer, defaultView, config, views, appClasses) {
         this.events = {};
         // Message Events
         this._messageHandlers = new Map();
         this._messageProcessorQueue = Promise.resolve();
         // === Public === //
         this.isReady = false;
-        this.name = name;
+        this.name = "infinityFramework";
         this.config = config;
+        this.appClasses = appClasses;
         this.appContainer = appContainer;
         this.views = views;
         ClientManager.Registrations.set(this.name, this);
-        const store = new __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* Store */](this.name);
-        this.bootstrap(store);
+        if (!window.cti) {
+            const store = new appClasses.store(this.name);
+            this.bootstrap(store, appClasses);
+        }
     }
     static GetRegistration(name) {
         return ClientManager.Registrations.get(name);
@@ -236,10 +242,10 @@ class ClientManager {
     static FireReady() {
         document.dispatchEvent(new CustomEvent("client-manager-ready" /* ClientManagerReady */));
     }
-    bootstrap(store) {
+    bootstrap(store, appClasses) {
         return Promise.resolve()
             .then(() => this._setStore(store))
-            .then(() => this._setRestClient())
+            .then(() => this._setRestClient(appClasses))
             .then(() => this._setRouter())
             .then(() => this._bindStartupEvents())
             .then(() => {
@@ -253,15 +259,15 @@ class ClientManager {
             this.store.init().then(() => resolve());
         });
     }
-    _setRestClient() {
+    _setRestClient(appClasses) {
         return new Promise(resolve => {
-            this.rest = new __WEBPACK_IMPORTED_MODULE_2__client_rest_client_rest_client__["a" /* RestClient */](this.config.rest, this.store);
+            this.rest = new appClasses.rest(this.config.rest, this.store);
             resolve();
         });
     }
     _setRouter() {
         return new Promise(resolve => {
-            this.router = new __WEBPACK_IMPORTED_MODULE_1__client_router_router__["a" /* Router */](this.appContainer, this.views, (view) => this.unloadEvents(view));
+            this.router = new __WEBPACK_IMPORTED_MODULE_0__client_router_router__["a" /* Router */](this.appContainer, this.views, (view) => this.unloadEvents(view));
             resolve();
         });
     }
@@ -321,6 +327,10 @@ class ClientManager {
             console.error("Error processing message", ex);
         });
     }
+    // === Public === //
+    triggerBootstrap() {
+        this.bootstrap(new this.appClasses.store(this.name), this.appClasses);
+    }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = ClientManager;
 
@@ -330,42 +340,223 @@ ClientManager.Registrations = new Map();
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = skate;
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientEvents; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_args__ = __webpack_require__(6);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__event_args__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__event_args__["b"]; });
+var ClientEvents;
+(function (ClientEvents) {
+    // Client Manager Ready
+    ClientEvents["ClientManagerReady"] = "client-manager-ready";
+    // Popout Menu Events
+    ClientEvents["OpenPopoutMenu"] = "open-popout-menu";
+    ClientEvents["ClosePopoutMenu"] = "close-popout-menu";
+    ClientEvents["SearchComplete"] = "search-complete";
+})(ClientEvents || (ClientEvents = {}));
+
+
 
 /***/ }),
 /* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-class EventArgs {
-    constructor() { }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = EventArgs;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_args__ = __webpack_require__(18);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__event_args__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ws_event_args__ = __webpack_require__(19);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__ws_event_args__["a"]; });
+
 
 
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = __webpack_require__(8);
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__decorators__ = __webpack_require__(21);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__decorators__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__decorators__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__BaseComponent__ = __webpack_require__(9);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseComponent__["a"]; });
+
+
 
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = skate;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__client_clientManager__ = __webpack_require__(4);
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
+
+// tslint:disable typedef
+// tslint:disable no-any
+window.__CTRender = window.skate.h;
+class BaseComponent extends __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__["Component"] {
+    constructor() {
+        super(...arguments);
+        this.managerName = "infinityFramework";
+    }
+    // === Private === //
+    _bindManager(ev) {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.manager = __WEBPACK_IMPORTED_MODULE_1__client_clientManager__["a" /* ClientManager */].GetRegistration(this.managerName);
+            if (this.manager) {
+                this._setupEventListeners();
+                yield this._init();
+            }
+        });
+    }
+    // === Lifecycle Events === //
+    connectedCallback() {
+        super.connectedCallback();
+        const manager = __WEBPACK_IMPORTED_MODULE_1__client_clientManager__["a" /* ClientManager */].GetRegistration(this.managerName);
+        if (!manager || !manager.isReady) {
+            document.addEventListener("client-manager-ready" /* ClientManagerReady */, (ev) => this._bindManager(ev));
+        }
+        else {
+            this.manager = manager;
+            this._setupEventListeners();
+            Promise.resolve().then(() => __awaiter(this, void 0, void 0, function* () { return yield this._init(); }));
+        }
+    }
+    // === Render function === //
+    renderCallback() {
+        const styles = ensureArray(this.componentStyles());
+        const html = ensureArray(this.componentMarkup
+            ? this.componentMarkup() || []
+            : []);
+        return [
+            ...styles,
+            ...html
+        ];
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = BaseComponent;
+
+function ensureArray(value) {
+    return (value instanceof Array)
+        ? value
+        : [value];
+}
+// tslint:enable no-any
+// tslint:enable typedef
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Icon; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0____ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__client__ = __webpack_require__(2);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
+
+let Icon = class Icon extends __WEBPACK_IMPORTED_MODULE_0____["a" /* BaseComponent */] {
+    // === Init === //
+    _init() {
+        return __awaiter(this, void 0, void 0, function* () { });
+    }
+    _setupEventListeners() { }
+    // === Render === //
+    componentStyles() {
+        return (window.__CTRender("style", null, __webpack_require__(31)));
+    }
+    componentMarkup() {
+        if (!this.icon) {
+            return null;
+        }
+        const styles = Object(__WEBPACK_IMPORTED_MODULE_1__client__["d" /* buildStyles */])({
+            fill: this.color !== "auto"
+                ? this.color
+                : window.getComputedStyle(this.parentElement).color,
+            width: this.width,
+            height: this.height
+        });
+        const viewBox = this.icon.viewBox || "0 0 1024 1024";
+        const svgPaths = (this.icon.paths || []);
+        return (window.__CTRender("svg", { width: this.width, height: this.height, viewBox: viewBox, style: styles }, svgPaths.map((path, idx) => (window.__CTRender("path", { d: path })))));
+    }
+};
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "18" })
+], Icon.prototype, "width", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "18" })
+], Icon.prototype, "height", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "auto" })
+], Icon.prototype, "color", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: true, default: false })
+], Icon.prototype, "spin", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Object, attribute: false, default: null })
+], Icon.prototype, "icon", void 0);
+Icon = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["k" /* component */])({ tag: "wc-icon" })
+], Icon);
+
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(12);
+
+
+/***/ }),
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__client__ = __webpack_require__(2);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ClientManager", function() { return __WEBPACK_IMPORTED_MODULE_0__client__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "buildStyles", function() { return __WEBPACK_IMPORTED_MODULE_0__client__["b"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "getCSSVariable", function() { return __WEBPACK_IMPORTED_MODULE_0__client__["c"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "buildStyles", function() { return __WEBPACK_IMPORTED_MODULE_0__client__["d"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "getCSSVariable", function() { return __WEBPACK_IMPORTED_MODULE_0__client__["e"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "RestClient", function() { return __WEBPACK_IMPORTED_MODULE_0__client__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "WebSocketClient", function() { return __WEBPACK_IMPORTED_MODULE_0__client__["c"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components__ = __webpack_require__(0);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "component", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["j"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "prop", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["k"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "component", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["k"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "prop", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["l"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BaseComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["c"]; });
@@ -373,13 +564,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "IconButton", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["e"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Pill", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["f"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "PopoutMenu", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["g"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabNavigator", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["h"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TouchList", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["i"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events__ = __webpack_require__(46);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SearchBox", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["h"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabNavigator", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["i"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TouchList", function() { return __WEBPACK_IMPORTED_MODULE_1__components__["j"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events__ = __webpack_require__(5);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ClientEvents", function() { return __WEBPACK_IMPORTED_MODULE_2__events__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "EventArgs", function() { return __WEBPACK_IMPORTED_MODULE_2__events__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "WSEventArgs", function() { return __WEBPACK_IMPORTED_MODULE_2__events__["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__handlers__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__handlers__ = __webpack_require__(52);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BaseHandler", function() { return __WEBPACK_IMPORTED_MODULE_3__handlers__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "get", function() { return __WEBPACK_IMPORTED_MODULE_3__handlers__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models__ = __webpack_require__(3);
@@ -390,116 +582,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-// import { ClientManager } from "client";
-// import { Views } from "views/views";
-// window.wc = new ClientManager("wc", "body", "view-login", {}, Views);
 
 
 /***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-class Store {
-    // === Constructor === //
-    constructor(name) {
-        this._saveToPersistentQueue = Promise.resolve();
-        this.name = name;
-        this._db = new window.PouchDB(name);
-    }
-    // === Public === //
-    init() {
-        return __awaiter(this, void 0, void 0, function* () {
-            this.state = yield this._getFromPersistent();
-        });
-    }
-    getFromState(key) {
-        return this.state[key] || null;
-    }
-    // === Message Queue === //
-    saveToMessageQueue(messageEntity) {
-        return __awaiter(this, void 0, void 0, function* () {
-            this.state.messageQueue.push(messageEntity);
-            return yield this._saveToPersistent();
-        });
-    }
-    removeFromMessageQueue(messageEntity) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const idx = this.state.messageQueue.findIndex(x => x.id === messageEntity.id);
-            if (idx > -1) {
-                this.state.messageQueue.splice(idx, 1);
-                return yield this._saveToPersistent();
-            }
-            return;
-        });
-    }
-    getMessageQueue() {
-        return this.state.messageQueue;
-    }
-    // === Private === //
-    _saveToPersistent() {
-        return __awaiter(this, void 0, void 0, function* () {
-            clearTimeout(this._saveDebouncer);
-            this._saveDebouncer = setTimeout(() => {
-                if (this._db) {
-                    this._saveToPersistentQueue = this._saveToPersistentQueue.then(() => __awaiter(this, void 0, void 0, function* () {
-                        try {
-                            const res = yield this._db.put(this.state);
-                            this.state._rev = res.rev;
-                        }
-                        catch (ex) {
-                            throw new Error(ex);
-                        }
-                    }));
-                }
-                else {
-                    localStorage[this.name] = JSON.stringify(this.state);
-                }
-            }, 500);
-        });
-    }
-    _getFromPersistent() {
-        return __awaiter(this, void 0, void 0, function* () {
-            if (this._db) {
-                try {
-                    return yield this._db.get(this.name);
-                }
-                catch (ex) {
-                    const state = this._generateInitialState();
-                    const res = yield this._db.put(state);
-                    state._rev = res.rev;
-                    return state;
-                }
-            }
-            else {
-                const state = localStorage.getItem(this.name)
-                    ? JSON.parse(localStorage.getItem(this.name))
-                    : this._generateInitialState();
-            }
-        });
-    }
-    _generateInitialState() {
-        return {
-            _id: this.name,
-            _rev: "",
-            messageQueue: []
-        };
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Store;
-
-
-
-/***/ }),
-/* 10 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -579,7 +665,7 @@ class Router {
 
 
 /***/ }),
-/* 11 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -600,8 +686,11 @@ class RestClient {
         this.store = store;
         this._resetRequestOptions();
     }
-    // === Private === //
+    // === Protected === //
     _generateQueryString(queryParams) {
+        if (!queryParams) {
+            return "";
+        }
         return queryParams.reduce((acc, cur, idx) => {
             let query = "";
             // tslint:disable curly
@@ -624,7 +713,7 @@ class RestClient {
         };
     }
     // tslint:disable-next-line no-any
-    _sendMessage(uri, method, queryParams = [], body = {}, addToQueue = false) {
+    _sendMessage(uri, method, queryParams = [], body = {}, headers = {}, addToQueue = false) {
         return __awaiter(this, void 0, void 0, function* () {
             if (!this.config) {
                 throw new Error("Rest client not properly configured.");
@@ -633,6 +722,7 @@ class RestClient {
                 id: "",
                 address: `${this.config.baseUri}${uri}`,
                 verb: method,
+                headers: headers,
                 queryParams: queryParams,
                 body: body,
                 attemps: 0,
@@ -650,9 +740,7 @@ class RestClient {
         return __awaiter(this, void 0, void 0, function* () {
             let req;
             this.requestOptions = {
-                headers: new Headers({
-                    "AccessToken": "TODO: Get this from somewhere..."
-                })
+                headers: new Headers(Object.assign({}, msg.headers))
             };
             if (msg.verb === __WEBPACK_IMPORTED_MODULE_0__models__["a" /* HttpVerb */].GET) {
                 req = Object.assign({
@@ -714,7 +802,7 @@ class RestClient {
 
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -811,7 +899,7 @@ const Icons = {
 
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -820,11 +908,163 @@ var HttpVerb;
 (function (HttpVerb) {
     HttpVerb["GET"] = "get";
     HttpVerb["POST"] = "post";
+    HttpVerb["PUT"] = "put";
+    HttpVerb["PATCH"] = "patch";
+    HttpVerb["DELETE"] = "delete";
 })(HttpVerb || (HttpVerb = {}));
 
 
 /***/ }),
-/* 14 */
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__events__ = __webpack_require__(5);
+
+class WebSocketClient {
+    // === Constructor === //
+    constructor(websocketConfig, messageCallback) {
+        this.forceClose = false;
+        // Determines if the client will handle automatic connection retries
+        this.enableAutoReconnect = false;
+        // Ping waiting time
+        this.pingWaitingTime = 15000;
+        // Time last ping was received
+        this.lastPingReceived = 0;
+        // MS to delay before trying to reconnect
+        this.reconnectInterval = 5000;
+        // Decay reconnect attempts in seconds
+        this.reconnectDecay = 1.5;
+        // Reconnection attempts
+        this.reconnectAttempts = -1;
+        this.config = websocketConfig;
+        this.id = this.config.id;
+        this.messageCallback = messageCallback;
+        this.connect();
+        this._bindEvents();
+    }
+    // === Private === //
+    _bindEvents() {
+        this.socket.onopen = (e) => this._onOpen(e);
+        this.socket.onmessage = (m) => this._onMessage(m);
+        this.socket.onclose = (e) => this._onClose(e);
+    }
+    // tslint:disable-next-line no-any
+    _onOpen(event) {
+        // tslint:disable-next-line no-console
+        console.log(`Opened socket: ${this.config.uri}`, event);
+        this.forceClose = false;
+        if (this.enableAutoReconnect) {
+            clearTimeout(this.reconnectTimeout);
+            this.reconnectAttempts = -1;
+            this.pingTimeout = setTimeout(() => this._pingTimeout(), this.pingWaitingTime);
+        }
+        this.sendMessage({ type: "register" });
+    }
+    _onClose(event) {
+        // tslint:disable-next-line no-console
+        console.log(`Closed socket: ${this.config.uri}`, event);
+        // We have been disconnected by something, so attempt to reconnect
+        if (this.enableAutoReconnect && !this.forceClose) {
+            this.reconnect();
+        }
+    }
+    _onMessage(message) {
+        try {
+            const data = JSON.parse(message.data);
+            if (this.enableAutoReconnect && data.payload.type === "ping") {
+                clearTimeout(this.pingTimeout);
+                delete this.pingTimeout;
+                this.sendMessage({ type: "ping-response" });
+            }
+            else {
+                const args = new __WEBPACK_IMPORTED_MODULE_0__events__["c" /* WSEventArgs */](data.payload.action, data.payload.payload);
+                this.messageCallback(args);
+            }
+        }
+        catch (ex) {
+            // tslint:disable-next-line no-console
+            console.error(ex);
+        }
+    }
+    _pingTimeout() {
+        clearTimeout(this.pingTimeout);
+        this.socket.close();
+    }
+    // === Public === //
+    connect() {
+        try {
+            delete this.socket;
+            this.socket = new WebSocket(this.config.uri);
+            this._bindEvents();
+        }
+        catch (ex) {
+            // tslint:disable-next-line no-console
+            console.log("Websocket connection error:", ex);
+            if (this.enableAutoReconnect) {
+                this.reconnect();
+            }
+        }
+    }
+    disconnect() {
+        this.forceClose = true;
+        this.socket.close();
+    }
+    reconnect() {
+        clearTimeout(this.reconnectTimeout);
+        ++this.reconnectAttempts;
+        const reconnectIn = this.reconnectInterval * Math.pow(this.reconnectDecay, this.reconnectAttempts);
+        // tslint:disable-next-line no-console
+        console.log("Attempting to reconnect in:", reconnectIn);
+        this.reconnectTimeout = setTimeout(() => this.connect(), reconnectIn);
+    }
+    sendMessage(message) {
+        if (!message.id) {
+            message.id = this.config.id;
+        }
+        this.socket.send(JSON.stringify(message));
+    }
+    isConnected() {
+        return this.socket.readyState === 1;
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = WebSocketClient;
+
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class EventArgs {
+    constructor() { }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = EventArgs;
+
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_args__ = __webpack_require__(6);
+
+class WSEventArgs extends __WEBPACK_IMPORTED_MODULE_0__event_args__["a" /* EventArgs */] {
+    // tslint:disable-next-line no-any
+    constructor(action, payload) {
+        super();
+        this.action = action;
+        this.payload = payload;
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = WSEventArgs;
+
+
+
+/***/ }),
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -842,34 +1082,20 @@ function getCSSVariable(cssVar) {
 
 
 /***/ }),
-/* 15 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__decorators__ = __webpack_require__(16);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__decorators__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__decorators__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__BaseComponent__ = __webpack_require__(19);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseComponent__["a"]; });
-
-
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(22);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__prop__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__prop__ = __webpack_require__(23);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__prop__["a"]; });
 
 
 
 
 /***/ }),
-/* 17 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -892,12 +1118,12 @@ function component(definition) {
 
 
 /***/ }),
-/* 18 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = prop;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__);
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
@@ -950,98 +1176,29 @@ function parseType(type) {
 
 
 /***/ }),
-/* 19 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__client_clientManager__ = __webpack_require__(4);
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-
-
-// tslint:disable typedef
-// tslint:disable no-any
-window.__CTRender = window.skate.h;
-class BaseComponent extends __WEBPACK_IMPORTED_MODULE_0_skatejs_src_index__["Component"] {
-    constructor() {
-        super(...arguments);
-        this.managerName = "wc";
-    }
-    // === Private === //
-    _bindManager(ev) {
-        return __awaiter(this, void 0, void 0, function* () {
-            this.manager = __WEBPACK_IMPORTED_MODULE_1__client_clientManager__["a" /* ClientManager */].GetRegistration(this.managerName);
-            if (this.manager) {
-                this._setupEventListeners();
-                yield this._init();
-            }
-        });
-    }
-    // === Lifecycle Events === //
-    connectedCallback() {
-        super.connectedCallback();
-        const manager = __WEBPACK_IMPORTED_MODULE_1__client_clientManager__["a" /* ClientManager */].GetRegistration(this.managerName);
-        if (!manager || !manager.isReady) {
-            document.addEventListener("client-manager-ready" /* ClientManagerReady */, (ev) => this._bindManager(ev));
-        }
-        else {
-            this.manager = manager;
-            this._setupEventListeners();
-            Promise.resolve().then(() => __awaiter(this, void 0, void 0, function* () { return yield this._init(); }));
-        }
-    }
-    // === Render function === //
-    renderCallback() {
-        const styles = ensureArray(this.componentStyles());
-        const html = ensureArray(this.componentMarkup
-            ? this.componentMarkup() || []
-            : []);
-        return [
-            ...styles,
-            ...html
-        ];
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = BaseComponent;
-
-function ensureArray(value) {
-    return (value instanceof Array)
-        ? value
-        : [value];
-}
-// tslint:enable no-any
-// tslint:enable typedef
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__button_button__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__button_button__ = __webpack_require__(25);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__button_button__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__header_header__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__header_header__ = __webpack_require__(28);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__header_header__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon_icon__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon_icon__ = __webpack_require__(10);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__icon_icon__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__icon_button_icon_button__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__icon_button_icon_button__ = __webpack_require__(33);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__icon_button_icon_button__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pill_pill__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pill_pill__ = __webpack_require__(36);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__pill_pill__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__popout_menu_popout_menu__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__popout_menu_popout_menu__ = __webpack_require__(39);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_5__popout_menu_popout_menu__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tab_navigator_tab_navigator__ = __webpack_require__(39);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_6__tab_navigator_tab_navigator__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__touch_list_touch_list__ = __webpack_require__(42);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_7__touch_list_touch_list__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__search_box_search_box__ = __webpack_require__(42);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_6__search_box_search_box__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tab_navigator_tab_navigator__ = __webpack_require__(45);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_7__tab_navigator_tab_navigator__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__touch_list_touch_list__ = __webpack_require__(48);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_8__touch_list_touch_list__["a"]; });
+
 
 
 
@@ -1053,14 +1210,14 @@ function ensureArray(value) {
 
 
 /***/ }),
-/* 21 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Button; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_models__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_client__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0____ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__client__ = __webpack_require__(2);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1078,7 +1235,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 
 
 
-let Button = class Button extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /* BaseComponent */] {
+let Button = class Button extends __WEBPACK_IMPORTED_MODULE_0____["a" /* BaseComponent */] {
     constructor() {
         // === Props === //
         super(...arguments);
@@ -1096,7 +1253,7 @@ let Button = class Button extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /
     _setupEventListeners() { }
     // === Render === //
     componentStyles() {
-        return (window.__CTRender("style", null, __webpack_require__(22)));
+        return (window.__CTRender("style", null, __webpack_require__(26)));
     }
     componentMarkup() {
         const cssClasses = [
@@ -1114,73 +1271,73 @@ let Button = class Button extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /
         if (this.isTransparent) {
             cssClasses.push("transparent");
         }
-        const textColorStyles = Object(__WEBPACK_IMPORTED_MODULE_2_client__["b" /* buildStyles */])(!!this.textColor
+        const textColorStyles = Object(__WEBPACK_IMPORTED_MODULE_2__client__["d" /* buildStyles */])(!!this.textColor
             ? { color: this.textColor }
             : {});
         return (window.__CTRender("button", { class: cssClasses.join(" "), style: textColorStyles, disabled: this.isWaiting || this.disabled, onClick: e => this._performAction() },
             window.__CTRender("div", { class: "button-content" },
                 !this.isWaiting && !!this.icon
-                    ? window.__CTRender(__WEBPACK_IMPORTED_MODULE_0_components__["d" /* Icon */], { icon: this.icon, color: this.iconColor, width: this.iconWidth, height: this.iconHeight, class: "icon" })
+                    ? window.__CTRender(__WEBPACK_IMPORTED_MODULE_0____["d" /* Icon */], { icon: this.icon, color: this.iconColor, width: this.iconWidth, height: this.iconHeight, class: "icon" })
                     : null,
                 this.isWaiting
-                    ? window.__CTRender(__WEBPACK_IMPORTED_MODULE_0_components__["d" /* Icon */], { icon: __WEBPACK_IMPORTED_MODULE_1_models__["b" /* Icons */].FontAwesome.Spinner, color: this.iconColor, width: this.iconHeight, height: this.iconHeight, spin: true, class: "icon" })
+                    ? window.__CTRender(__WEBPACK_IMPORTED_MODULE_0____["d" /* Icon */], { icon: __WEBPACK_IMPORTED_MODULE_1__models__["b" /* Icons */].FontAwesome.Spinner, color: this.iconColor, width: this.iconHeight, height: this.iconHeight, spin: true, class: "icon" })
                     : window.__CTRender("div", { class: "label" },
                         window.__CTRender("slot", null)))));
     }
 };
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "transparent" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "transparent" })
 ], Button.prototype, "type", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "auto" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "auto" })
 ], Button.prototype, "color", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: true, default: false })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: true, default: false })
 ], Button.prototype, "selected", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: true, default: false })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: true, default: false })
 ], Button.prototype, "disabled", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: true, default: false })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: true, default: false })
 ], Button.prototype, "large", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: true, default: false })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: true, default: false })
 ], Button.prototype, "isTransparent", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true })
 ], Button.prototype, "textColor", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "auto" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "auto" })
 ], Button.prototype, "iconColor", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "18px" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "18px" })
 ], Button.prototype, "iconWidth", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "18px" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "18px" })
 ], Button.prototype, "iconHeight", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Object, attribute: false, default: null })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Object, attribute: false, default: null })
 ], Button.prototype, "icon", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: false, default: false })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: false, default: false })
 ], Button.prototype, "isWaiting", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Function, attribute: false })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Function, attribute: false })
 ], Button.prototype, "action", void 0);
 Button = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["j" /* component */])({ tag: "wc-button" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["k" /* component */])({ tag: "wc-button" })
 ], Button);
 
 
 
 /***/ }),
-/* 22 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // css-to-string-loader: transforms styles from css-loader to a string output
 
 // Get the styles
-var styles = __webpack_require__(23);
+var styles = __webpack_require__(27);
 
 if (typeof styles === 'string') {
   // Return an existing string
@@ -1191,7 +1348,7 @@ if (typeof styles === 'string') {
 }
 
 /***/ }),
-/* 23 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -1199,19 +1356,19 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host {\n  display: block; }\n  :host button {\n    position: relative;\n    background: transparent;\n    color: inherit;\n    padding: 0.55em 1em;\n    border: 1px solid transparent;\n    border-radius: 5px;\n    font-size: inherit;\n    font-weight: inherit;\n    outline: none;\n    cursor: pointer;\n    overflow: hidden;\n    width: 100%;\n    height: 100%; }\n    :host button .button-content {\n      display: inline-flex;\n      justify-content: center;\n      align-items: center; }\n      :host button .button-content .icon {\n        display: block; }\n      :host button .button-content .label {\n        display: block; }\n      :host button .button-content .icon + .label {\n        margin: 0 0 0 5px; }\n    :host button.transparent {\n      background-color: transparent; }\n    :host button.primary {\n      background-color: var(--app-primary-button-color);\n      color: white; }\n    :host button.secondary {\n      background-color: var(--app-secondary-button-color);\n      color: var(--app-secondary-button-font);\n      border: 1px solid var(--app-secondary-button-border); }\n    :host button.popoutDanger {\n      color: var(--app-danger-button-color); }\n    :host button.popoutMenu {\n      background-color: var(--default-popout-button-bg);\n      color: var(--default-popout-button-font); }\n\n:host([class=\"withIcon\"]) button .button-content {\n  justify-content: flex-start;\n  width: 100%; }\n  :host([class=\"withIcon\"]) button .button-content wc-icon {\n    margin: auto 10px auto 5px; }\n  :host([class=\"withIcon\"]) button .button-content .label {\n    margin: auto auto auto 0;\n    width: auto; }\n    :host([class=\"withIcon\"]) button .button-content .label slot {\n      padding-top: 3px;\n      margin: auto 0; }\n", ""]);
+exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host {\n  display: block; }\n  :host button {\n    position: relative;\n    background: transparent;\n    color: inherit;\n    padding: 0.55em 1em;\n    border: 1px solid transparent;\n    border-radius: 5px;\n    font-size: inherit;\n    font-weight: inherit;\n    outline: none;\n    cursor: pointer;\n    overflow: hidden;\n    width: 100%;\n    height: 100%; }\n    :host button .button-content {\n      display: inline-flex;\n      justify-content: center;\n      align-items: center; }\n      :host button .button-content .icon {\n        display: block; }\n      :host button .button-content .label {\n        display: block; }\n      :host button .button-content .icon + .label {\n        margin: 0 0 0 5px; }\n    :host button.transparent {\n      background-color: transparent; }\n    :host button.primary {\n      background-color: var(--app-primary-button-color);\n      color: var(--app-primary-button-font); }\n    :host button.secondary {\n      background-color: var(--app-secondary-button-color);\n      color: var(--app-secondary-button-font);\n      border: 1px solid var(--app-secondary-button-border); }\n    :host button.popoutDanger {\n      color: var(--app-danger-button-color); }\n    :host button.popoutMenu {\n      background-color: var(--default-popout-button-bg);\n      color: var(--default-popout-button-font); }\n\n:host([class=\"withIcon\"]) button .button-content {\n  justify-content: flex-start;\n  width: 100%; }\n  :host([class=\"withIcon\"]) button .button-content wc-icon {\n    margin: auto 10px auto 5px; }\n  :host([class=\"withIcon\"]) button .button-content .label {\n    margin: auto auto auto 0;\n    width: auto; }\n    :host([class=\"withIcon\"]) button .button-content .label slot {\n      padding-top: 3px;\n      margin: auto 0; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 24 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Header; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_client__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0____ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__client__ = __webpack_require__(2);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1228,7 +1385,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 
 
-let Header = class Header extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /* BaseComponent */] {
+let Header = class Header extends __WEBPACK_IMPORTED_MODULE_0____["a" /* BaseComponent */] {
     // === Init === //
     _init() {
         return __awaiter(this, void 0, void 0, function* () { });
@@ -1236,14 +1393,14 @@ let Header = class Header extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /
     _setupEventListeners() { }
     // === Render === //
     componentStyles() {
-        return (window.__CTRender("style", null, __webpack_require__(25)));
+        return (window.__CTRender("style", null, __webpack_require__(29)));
     }
     componentMarkup() {
         let styles = null;
         if (this.bgColor) {
             this.style.backgroundColor = this.bgColor;
-            styles = Object(__WEBPACK_IMPORTED_MODULE_1_client__["b" /* buildStyles */])({
-                color: Object(__WEBPACK_IMPORTED_MODULE_1_client__["c" /* getCSSVariable */])("--primary-color")
+            styles = Object(__WEBPACK_IMPORTED_MODULE_1__client__["d" /* buildStyles */])({
+                color: Object(__WEBPACK_IMPORTED_MODULE_1__client__["e" /* getCSSVariable */])("--primary-color")
             });
         }
         return (window.__CTRender("div", { className: "container", style: styles },
@@ -1265,28 +1422,28 @@ let Header = class Header extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /
     }
 };
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: false, default: "" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: false, default: "" })
 ], Header.prototype, "title", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: false, default: "" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: false, default: "" })
 ], Header.prototype, "subtitle", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: false, default: null })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: false, default: null })
 ], Header.prototype, "bgColor", void 0);
 Header = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["j" /* component */])({ tag: "wc-header" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["k" /* component */])({ tag: "wc-header" })
 ], Header);
 
 
 
 /***/ }),
-/* 25 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // css-to-string-loader: transforms styles from css-loader to a string output
 
 // Get the styles
-var styles = __webpack_require__(26);
+var styles = __webpack_require__(30);
 
 if (typeof styles === 'string') {
   // Return an existing string
@@ -1297,7 +1454,7 @@ if (typeof styles === 'string') {
 }
 
 /***/ }),
-/* 26 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -1308,192 +1465,6 @@ exports = module.exports = __webpack_require__(1)(undefined);
 exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host {\n  display: block;\n  width: 100vw;\n  padding: 0 20px;\n  background-color: var(--primary-color); }\n  :host div.container {\n    color: var(--primary-color-font); }\n    :host div.container div.mainTitle {\n      display: flex;\n      height: 6vh; }\n      :host div.container div.mainTitle h1 {\n        font-size: 18px;\n        text-align: center;\n        font-weight: 600;\n        margin: auto; }\n      :host div.container div.mainTitle div.icon {\n        margin: auto 0;\n        min-width: 40px;\n        cursor: pointer; }\n    :host div.container div.subtitle {\n      height: 6vh;\n      display: flex; }\n      :host div.container div.subtitle h3 {\n        margin: 0 auto;\n        font-weight: 300;\n        font-size: 16px; }\n", ""]);
 
 // exports
-
-
-/***/ }),
-/* 27 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Icon; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_client__ = __webpack_require__(2);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-
-
-let Icon = class Icon extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /* BaseComponent */] {
-    // === Init === //
-    _init() {
-        return __awaiter(this, void 0, void 0, function* () { });
-    }
-    _setupEventListeners() { }
-    // === Render === //
-    componentStyles() {
-        return (window.__CTRender("style", null, __webpack_require__(28)));
-    }
-    componentMarkup() {
-        if (!this.icon) {
-            return null;
-        }
-        const styles = Object(__WEBPACK_IMPORTED_MODULE_1_client__["b" /* buildStyles */])({
-            fill: this.color !== "auto"
-                ? this.color
-                : window.getComputedStyle(this.parentElement).color,
-            width: this.width,
-            height: this.height
-        });
-        const viewBox = this.icon.viewBox || "0 0 1024 1024";
-        const svgPaths = (this.icon.paths || []);
-        return (window.__CTRender("svg", { width: this.width, height: this.height, viewBox: viewBox, style: styles }, svgPaths.map((path, idx) => (window.__CTRender("path", { d: path })))));
-    }
-};
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "18" })
-], Icon.prototype, "width", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "18" })
-], Icon.prototype, "height", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "auto" })
-], Icon.prototype, "color", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: true, default: false })
-], Icon.prototype, "spin", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Object, attribute: false, default: null })
-], Icon.prototype, "icon", void 0);
-Icon = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["j" /* component */])({ tag: "wc-icon" })
-], Icon);
-
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// css-to-string-loader: transforms styles from css-loader to a string output
-
-// Get the styles
-var styles = __webpack_require__(29);
-
-if (typeof styles === 'string') {
-  // Return an existing string
-  module.exports = styles;
-} else {
-  // Call the custom toString method from css-loader module
-  module.exports = styles.toString();
-}
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ":host {\n  display: flex; }\n  :host svg {\n    margin: auto; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IconButton; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-
-let IconButton = class IconButton extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /* BaseComponent */] {
-    constructor() {
-        // === Props === //
-        super(...arguments);
-        // === Private === //
-        this._performAction = () => {
-            if (this.action) {
-                this.action();
-            }
-        };
-    }
-    // === Init == //
-    _init() {
-        return __awaiter(this, void 0, void 0, function* () { });
-    }
-    _setupEventListeners() { }
-    // === Render === //
-    componentStyles() {
-        return (window.__CTRender("style", null, __webpack_require__(31)));
-    }
-    componentMarkup() {
-        const cssClasses = [
-            this.type
-        ];
-        if (this.isWaiting) {
-            cssClasses.push("waiting");
-        }
-        return (window.__CTRender("button", { class: cssClasses.join(" "), disabled: this.isWaiting || this.disabled, onClick: e => this._performAction() },
-            window.__CTRender(__WEBPACK_IMPORTED_MODULE_0_components__["d" /* Icon */], { icon: this.icon, color: this.iconColor, className: "icon", width: this.width, height: this.height }),
-            window.__CTRender("slot", null)));
-    }
-};
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "transparent" })
-], IconButton.prototype, "type", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: true, default: false })
-], IconButton.prototype, "disabled", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "auto" })
-], IconButton.prototype, "iconColor", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Object, attribute: false, default: null })
-], IconButton.prototype, "icon", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "18" })
-], IconButton.prototype, "width", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "18" })
-], IconButton.prototype, "height", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: false, default: false })
-], IconButton.prototype, "isWaiting", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Function, attribute: false })
-], IconButton.prototype, "action", void 0);
-IconButton = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["j" /* component */])({ tag: "wc-icon-button" })
-], IconButton);
-
 
 
 /***/ }),
@@ -1522,7 +1493,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host {\n  display: block;\n  height: 40px;\n  width: 40px;\n  color: inherit; }\n  :host button {\n    position: relative;\n    background: transparent;\n    color: inherit;\n    border: 1px solid transparent;\n    border-radius: 50%;\n    font-size: inherit;\n    font-weight: inherit;\n    outline: none;\n    cursor: pointer;\n    overflow: hidden;\n    width: 100%;\n    height: 100%;\n    display: flex; }\n    :host button wc-icon {\n      margin: auto; }\n    :host button.primary {\n      background-color: var(--app-primary-button-color);\n      color: var(--app-primary-button-font); }\n    :host button.secondary {\n      background-color: var(--app-secondary-button-color);\n      color: var(--app-secondary-button-font); }\n    :host button.success {\n      background-color: var(--app-success-button-color);\n      color: var(--app-success-button-color-font); }\n    :host button.danger {\n      background-color: var(--app-danger-button-color);\n      color: var(--app-danger-button-color-font); }\n    :host button.transparent {\n      background-color: transparent; }\n    :host button.transparentLight {\n      background-color: transparent;\n      color: white; }\n    :host button.accentOne {\n      background-color: var(--accent-color-one);\n      color: var(--accent-color-one-font); }\n    :host button.accentTwo {\n      background-color: var(--accent-color-two);\n      color: var(--accent-color-two-font); }\n    :host button.accentThree {\n      background-color: var(--accent-color-three);\n      color: var(--accent-color-three-font); }\n    :host button:disabled {\n      background-color: var(--default-bg-color-dark); }\n", ""]);
+exports.push([module.i, ":host {\n  display: flex; }\n  :host svg {\n    margin: auto; }\n\n:host([spin]) {\n  -webkit-animation: spin 1s infinite linear; }\n\n@-webkit-keyframes spin {\n  from {\n    -webkit-transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg); } }\n\n@keyframes spin {\n  from {\n    transform: rotate(0deg); }\n  to {\n    transform: rotate(360deg); } }\n", ""]);
 
 // exports
 
@@ -1532,8 +1503,8 @@ exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, bod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Pill; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IconButton; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0____ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1549,8 +1520,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 
-let Pill = class Pill extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /* BaseComponent */] {
-    // === Init === //
+let IconButton = class IconButton extends __WEBPACK_IMPORTED_MODULE_0____["a" /* BaseComponent */] {
+    constructor() {
+        // === Props === //
+        super(...arguments);
+        // === Private === //
+        this._performAction = () => {
+            if (this.action) {
+                this.action();
+            }
+        };
+    }
+    // === Init == //
     _init() {
         return __awaiter(this, void 0, void 0, function* () { });
     }
@@ -1560,26 +1541,44 @@ let Pill = class Pill extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /* Ba
         return (window.__CTRender("style", null, __webpack_require__(34)));
     }
     componentMarkup() {
-        if (!this.icon) {
-            return null;
+        const cssClasses = [
+            this.type
+        ];
+        if (this.isWaiting) {
+            cssClasses.push("waiting");
         }
-        return (window.__CTRender("div", { className: `container ${this.type}` },
-            this.icon
-                ? window.__CTRender(__WEBPACK_IMPORTED_MODULE_0_components__["d" /* Icon */], { icon: this.icon, width: "12", height: "12" })
-                : null,
-            window.__CTRender("span", null,
-                window.__CTRender("slot", null))));
+        return (window.__CTRender("button", { class: cssClasses.join(" "), disabled: this.isWaiting || this.disabled, onClick: e => this._performAction() },
+            window.__CTRender(__WEBPACK_IMPORTED_MODULE_0____["d" /* Icon */], { icon: this.icon, color: this.iconColor, className: "icon", width: this.width, height: this.height }),
+            window.__CTRender("slot", null)));
     }
 };
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "transparent" })
-], Pill.prototype, "type", void 0);
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "transparent" })
+], IconButton.prototype, "type", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Object, attribute: false, default: null })
-], Pill.prototype, "icon", void 0);
-Pill = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["j" /* component */])({ tag: "wc-pill" })
-], Pill);
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: true, default: false })
+], IconButton.prototype, "disabled", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "auto" })
+], IconButton.prototype, "iconColor", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Object, attribute: false, default: null })
+], IconButton.prototype, "icon", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "18" })
+], IconButton.prototype, "width", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "18" })
+], IconButton.prototype, "height", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: false, default: false })
+], IconButton.prototype, "isWaiting", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Function, attribute: false })
+], IconButton.prototype, "action", void 0);
+IconButton = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["k" /* component */])({ tag: "wc-icon-button" })
+], IconButton);
 
 
 
@@ -1609,7 +1608,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host {\n  display: block;\n  max-height: 30px;\n  min-width: 35px; }\n  :host div.container {\n    display: flex;\n    padding: 5px 8px;\n    font-size: 12px;\n    border-radius: 4px; }\n    :host div.container wc-icon {\n      margin: auto 3px auto 0; }\n    :host div.container span {\n      margin: auto 0; }\n    :host div.container.primary {\n      background-color: var(--app-primary-button-color);\n      color: var(--app-primary-button-font); }\n    :host div.container.secondary {\n      background-color: var(--app-secondary-button-color);\n      color: var(--app-secondary-button-font);\n      border: 1px solid var(--app-secondary-button-border); }\n    :host div.container.transparent {\n      background-color: transparent; }\n    :host div.container.danger {\n      background-color: var(--app-danger-button-color);\n      color: var(--app-danger-button-color-font); }\n    :host div.container.accentOne {\n      background-color: var(--accent-color-one);\n      color: var(--accent-color-one-font); }\n    :host div.container.accentTwo {\n      background-color: var(--accent-color-two);\n      color: var(--accent-color-two-font); }\n    :host div.container.accentThree {\n      background-color: var(--accent-color-three);\n      color: var(--accent-color-three-font); }\n", ""]);
+exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host {\n  display: block;\n  height: 40px;\n  width: 40px;\n  color: inherit; }\n  :host button {\n    position: relative;\n    background: transparent;\n    color: inherit;\n    border: 1px solid transparent;\n    border-radius: 50%;\n    font-size: inherit;\n    font-weight: inherit;\n    outline: none;\n    cursor: pointer;\n    overflow: hidden;\n    width: 100%;\n    height: 100%;\n    display: flex; }\n    :host button wc-icon {\n      margin: auto; }\n    :host button.primary {\n      background-color: var(--app-primary-button-color);\n      color: var(--app-primary-button-font); }\n    :host button.secondary {\n      background-color: var(--app-secondary-button-color);\n      color: var(--app-secondary-button-font); }\n    :host button.success {\n      background-color: var(--app-success-button-color);\n      color: var(--app-success-button-color-font); }\n    :host button.danger {\n      background-color: var(--app-danger-button-color);\n      color: var(--app-danger-button-color-font); }\n    :host button.transparent {\n      background-color: transparent; }\n    :host button.transparentLight {\n      background-color: transparent;\n      color: white; }\n    :host button.accentOne {\n      background-color: var(--accent-color-one);\n      color: var(--accent-color-one-font); }\n    :host button.accentTwo {\n      background-color: var(--accent-color-two);\n      color: var(--accent-color-two-font); }\n    :host button.accentThree {\n      background-color: var(--accent-color-three);\n      color: var(--accent-color-three-font); }\n    :host button:disabled {\n      background-color: var(--default-bg-color-dark); }\n", ""]);
 
 // exports
 
@@ -1619,9 +1618,8 @@ exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, bod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PopoutMenu; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_client__ = __webpack_require__(2);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Pill; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0____ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1637,59 +1635,37 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 
-
-let PopoutMenu = class PopoutMenu extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /* BaseComponent */] {
+let Pill = class Pill extends __WEBPACK_IMPORTED_MODULE_0____["a" /* BaseComponent */] {
+    // === Init === //
     _init() {
         return __awaiter(this, void 0, void 0, function* () { });
     }
-    _setupEventListeners() {
-        this.manager.on("open-popout-menu" /* OpenPopoutMenu */, (id) => {
-            if (id === this.id) {
-                this.showing = true;
-            }
-        });
-        this.manager.on("close-popout-menu" /* ClosePopoutMenu */, () => this.showing = false);
-    }
+    _setupEventListeners() { }
+    // === Render === //
     componentStyles() {
         return (window.__CTRender("style", null, __webpack_require__(37)));
     }
     componentMarkup() {
-        return (window.__CTRender("div", { className: "container", style: this._workOutPosition() }, this.buttons.map(x => x)));
-    }
-    _workOutPosition() {
-        const parentClientRect = this.parentElement.getBoundingClientRect();
-        const halfParentHeight = parentClientRect.height / 2;
-        const halfParentWidth = parentClientRect.width / 2;
-        const top = parentClientRect.top + halfParentHeight;
-        // tslint:disable-next-line no-any
-        const style = {
-            top: `${top}px`
-        };
-        switch (this.direction) {
-            case "left":
-                style.transformOrigin = "right 0";
-                style.right = `${(window.innerWidth - parentClientRect.right) + halfParentWidth}px`;
-                break;
-            case "right":
-                style.transformOrigin = "left 0";
-                style.left = `${parentClientRect.left + halfParentWidth}px`;
-                break;
+        if (!this.icon) {
+            return null;
         }
-        return Object(__WEBPACK_IMPORTED_MODULE_1_client__["b" /* buildStyles */])(style);
+        return (window.__CTRender("div", { className: `container ${this.type}` },
+            this.icon
+                ? window.__CTRender(__WEBPACK_IMPORTED_MODULE_0____["d" /* Icon */], { icon: this.icon, width: "12", height: "12" })
+                : null,
+            window.__CTRender("span", null,
+                window.__CTRender("slot", null))));
     }
 };
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Array, attribute: false, default: [] })
-], PopoutMenu.prototype, "buttons", void 0);
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "transparent" })
+], Pill.prototype, "type", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: true, default: "left" })
-], PopoutMenu.prototype, "direction", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: true, default: false })
-], PopoutMenu.prototype, "showing", void 0);
-PopoutMenu = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["j" /* component */])({ tag: "wc-popout-menu" })
-], PopoutMenu);
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Object, attribute: false, default: null })
+], Pill.prototype, "icon", void 0);
+Pill = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["k" /* component */])({ tag: "wc-pill" })
+], Pill);
 
 
 
@@ -1719,7 +1695,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host div.container {\n  position: fixed;\n  padding: 0 15px;\n  border: 1px solid rgba(0, 0, 0, 0.15);\n  border-radius: 5px;\n  background-color: var(--default-menu-bg, white);\n  visibility: hidden;\n  transform: scale(0, 0);\n  will-change: transform;\n  transition: all 130ms cubic-bezier(0.77, 0, 0.175, 1);\n  transform-origin: right 0;\n  -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.3);\n  -moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.3);\n  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.3); }\n  :host div.container wc-button {\n    height: 60px;\n    border-bottom: 1px solid rgba(0, 0, 0, 0.15);\n    color: #8f98a3; }\n  :host div.container wc-button:last-child {\n    border: none; }\n\n:host([showing]) div.container {\n  visibility: visible;\n  transform: scale(1, 1); }\n", ""]);
+exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host {\n  display: block;\n  max-height: 30px;\n  min-width: 35px; }\n  :host div.container {\n    display: flex;\n    padding: 5px 8px;\n    font-size: 12px;\n    border-radius: 4px; }\n    :host div.container wc-icon {\n      margin: auto 3px auto 0; }\n    :host div.container span {\n      margin: auto 0; }\n    :host div.container.primary {\n      background-color: var(--app-primary-button-color);\n      color: var(--app-primary-button-font); }\n    :host div.container.secondary {\n      background-color: var(--app-secondary-button-color);\n      color: var(--app-secondary-button-font);\n      border: 1px solid var(--app-secondary-button-border); }\n    :host div.container.transparent {\n      background-color: transparent; }\n    :host div.container.danger {\n      background-color: var(--app-danger-button-color);\n      color: var(--app-danger-button-color-font); }\n    :host div.container.accentOne {\n      background-color: var(--accent-color-one);\n      color: var(--accent-color-one-font); }\n    :host div.container.accentTwo {\n      background-color: var(--accent-color-two);\n      color: var(--accent-color-two-font); }\n    :host div.container.accentThree {\n      background-color: var(--accent-color-three);\n      color: var(--accent-color-three-font); }\n", ""]);
 
 // exports
 
@@ -1729,8 +1705,9 @@ exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, bod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabNavigator; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PopoutMenu; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0____ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__client__ = __webpack_require__(2);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1746,43 +1723,59 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 
-let TabNavigator = class TabNavigator extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /* BaseComponent */] {
-    // === Init === //
+
+let PopoutMenu = class PopoutMenu extends __WEBPACK_IMPORTED_MODULE_0____["a" /* BaseComponent */] {
     _init() {
         return __awaiter(this, void 0, void 0, function* () { });
     }
-    _setupEventListeners() { }
-    // === Private === //
-    _tabRowClick(view) {
-        this.manager.router.goToPage(view);
+    _setupEventListeners() {
+        this.manager.on("open-popout-menu" /* OpenPopoutMenu */, (id) => {
+            if (id === this.id) {
+                this.showing = true;
+            }
+        });
+        this.manager.on("close-popout-menu" /* ClosePopoutMenu */, () => this.showing = false);
     }
-    // === Render === //
     componentStyles() {
         return (window.__CTRender("style", null, __webpack_require__(40)));
     }
     componentMarkup() {
-        if (!this.tabs || !this.tabs.length) {
-            return null;
-        }
-        return (window.__CTRender("div", { className: "container" }, this.tabs.map(x => this._renderTab(x.iconDefinition, x.text, x.view))));
+        return (window.__CTRender("div", { className: "container", style: this._workOutPosition() }, this.buttons.map(x => x)));
     }
-    _renderTab(icon, text, view) {
-        if (!this.manager) {
-            return null;
+    _workOutPosition() {
+        const parentClientRect = this.parentElement.getBoundingClientRect();
+        const halfParentHeight = parentClientRect.height / 2;
+        const halfParentWidth = parentClientRect.width / 2;
+        const top = parentClientRect.top + halfParentHeight;
+        // tslint:disable-next-line no-any
+        const style = {
+            top: `${top}px`
+        };
+        switch (this.direction) {
+            case "left":
+                style.transformOrigin = "right 0";
+                style.right = `${(window.innerWidth - parentClientRect.right) + halfParentWidth}px`;
+                break;
+            case "right":
+                style.transformOrigin = "left 0";
+                style.left = `${parentClientRect.left + halfParentWidth}px`;
+                break;
         }
-        const selected = view.tag === this.manager.router.currentPage.tag ? "selected" : "";
-        return (window.__CTRender("div", { className: `tab ${selected}`, onClick: () => this._tabRowClick(view) },
-            window.__CTRender("div", { className: "icon" },
-                window.__CTRender(__WEBPACK_IMPORTED_MODULE_0_components__["d" /* Icon */], { icon: icon })),
-            window.__CTRender("div", { className: "text" }, text)));
+        return Object(__WEBPACK_IMPORTED_MODULE_1__client__["d" /* buildStyles */])(style);
     }
 };
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Array, attribute: false, detault: [] })
-], TabNavigator.prototype, "tabs", void 0);
-TabNavigator = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["j" /* component */])({ tag: "wc-tab-navigator" })
-], TabNavigator);
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Array, attribute: false, default: [] })
+], PopoutMenu.prototype, "buttons", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: true, default: "left" })
+], PopoutMenu.prototype, "direction", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: true, default: false })
+], PopoutMenu.prototype, "showing", void 0);
+PopoutMenu = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["k" /* component */])({ tag: "wc-popout-menu" })
+], PopoutMenu);
 
 
 
@@ -1812,7 +1805,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host div.container {\n  display: flex;\n  flex: 0 0;\n  height: 8vh;\n  background-color: var(--default-bg-color-dark);\n  border-top: 1px solid var(--default-border-color); }\n  :host div.container div.tab {\n    flex: 1 1 50%;\n    margin: auto;\n    display: flex;\n    flex-direction: column;\n    color: var(--default-font-color-light); }\n    :host div.container div.tab.selected div.icon, :host div.container div.tab.selected div.text {\n      color: var(--primary-color); }\n    :host div.container div.tab div.icon {\n      margin: auto auto 2px auto; }\n    :host div.container div.tab div.text {\n      margin: auto 0;\n      text-align: center;\n      font-size: 12px; }\n\n@media screen and (max-height: 450px) {\n  :host {\n    display: none; } }\n", ""]);
+exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host div.container {\n  position: fixed;\n  padding: 0 15px;\n  border: 1px solid rgba(0, 0, 0, 0.15);\n  border-radius: 5px;\n  background-color: var(--default-menu-bg, white);\n  visibility: hidden;\n  transform: scale(0, 0);\n  will-change: transform;\n  transition: all 130ms cubic-bezier(0.77, 0, 0.175, 1);\n  transform-origin: right 0;\n  -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.3);\n  -moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.3);\n  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.3); }\n  :host div.container wc-button {\n    height: 60px;\n    border-bottom: 1px solid rgba(0, 0, 0, 0.15);\n    color: #8f98a3; }\n  :host div.container wc-button:last-child {\n    border: none; }\n\n:host([showing]) div.container {\n  visibility: visible;\n  transform: scale(1, 1); }\n", ""]);
 
 // exports
 
@@ -1822,10 +1815,11 @@ exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, bod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TouchList; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_client__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_client_slideReveal__ = __webpack_require__(43);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchBox; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_BaseComponent__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon_icon__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1843,7 +1837,246 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 
 
 
-let TouchList = class TouchList extends __WEBPACK_IMPORTED_MODULE_0_components__["a" /* BaseComponent */] {
+
+let SearchBox = class SearchBox extends __WEBPACK_IMPORTED_MODULE_0__base_BaseComponent__["a" /* BaseComponent */] {
+    constructor() {
+        // === Props === //
+        super(...arguments);
+        // === Private === //
+        this._toggleSearch = (e) => {
+            if (e.type === "focus") {
+                this.searchExpanded = true;
+            }
+            else {
+                this.searchExpanded = false;
+            }
+        };
+        this._updateSearchTerm = (e) => {
+            this.searchTerm = e.currentTarget.value;
+            clearTimeout(this.debouncer);
+            if (this.action) {
+                this.debouncer = setTimeout(() => {
+                    this.searching = true;
+                    this.action(this.searchTerm);
+                }, 500);
+            }
+        };
+        this._clearSearch = () => {
+            this.searchTerm = "";
+            this.action(this.searchTerm);
+            clearTimeout(this.debouncer);
+        };
+    }
+    // === Init == //
+    _init() {
+        return __awaiter(this, void 0, void 0, function* () { });
+    }
+    _setupEventListeners() {
+        this.manager.on("search-complete" /* SearchComplete */, () => this.searching = false);
+    }
+    // === Render === //
+    componentStyles() {
+        return (window.__CTRender("style", null, __webpack_require__(43)));
+    }
+    componentMarkup() {
+        return (window.__CTRender("div", { className: "container" },
+            window.__CTRender("div", { className: "input" },
+                window.__CTRender("input", { type: "text", placeholder: "Search", onFocus: this._toggleSearch, onBlur: this._toggleSearch, className: `${this.searchExpanded ? "expanded" : ""}`, onInput: this._updateSearchTerm, value: this.searchTerm })),
+            window.__CTRender("div", { className: "control" }, this._renderIcon())));
+    }
+    _renderIcon() {
+        if (this.searching) {
+            return window.__CTRender(__WEBPACK_IMPORTED_MODULE_2__icon_icon__["a" /* Icon */], { icon: this.loadingIcon || __WEBPACK_IMPORTED_MODULE_3__models__["b" /* Icons */].FontAwesome.CircleNotch, width: 14, height: 14, onClick: this._clearSearch, spin: true });
+        }
+        if (this.searchTerm) {
+            return window.__CTRender(__WEBPACK_IMPORTED_MODULE_2__icon_icon__["a" /* Icon */], { className: "clearSearch", icon: this.cancelIcon || __WEBPACK_IMPORTED_MODULE_3__models__["b" /* Icons */].FontAwesome.Cross, width: 14, height: 14, onClick: this._clearSearch, spin: this.searching });
+        }
+        else {
+            return window.__CTRender(__WEBPACK_IMPORTED_MODULE_2__icon_icon__["a" /* Icon */], { icon: this.searchIcon || __WEBPACK_IMPORTED_MODULE_3__models__["b" /* Icons */].FontAwesome.MagnifyingGlass, width: 14, height: 14 });
+        }
+    }
+};
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__base__["c" /* prop */])({ type: Function, attribute: false, default: null })
+], SearchBox.prototype, "action", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__base__["c" /* prop */])({ type: Boolean, attribute: true, default: false })
+], SearchBox.prototype, "disableExpand", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__base__["c" /* prop */])({ type: Boolean, attribute: true, default: false })
+], SearchBox.prototype, "searchExpanded", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__base__["c" /* prop */])({ type: String, attribute: false, default: "" })
+], SearchBox.prototype, "searchTerm", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__base__["c" /* prop */])({ type: Boolean, attribute: true, default: false })
+], SearchBox.prototype, "searching", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__base__["c" /* prop */])({ type: Object, attribute: false, default: null })
+], SearchBox.prototype, "searchIcon", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__base__["c" /* prop */])({ type: Object, attribute: false, default: null })
+], SearchBox.prototype, "cancelIcon", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__base__["c" /* prop */])({ type: Object, attribute: false, default: null })
+], SearchBox.prototype, "loadingIcon", void 0);
+SearchBox = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__base__["b" /* component */])({ tag: "wc-search-box" })
+], SearchBox);
+
+
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// css-to-string-loader: transforms styles from css-loader to a string output
+
+// Get the styles
+var styles = __webpack_require__(44);
+
+if (typeof styles === 'string') {
+  // Return an existing string
+  module.exports = styles;
+} else {
+  // Call the custom toString method from css-loader module
+  module.exports = styles.toString();
+}
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host {\n  display: flex; }\n  :host div.container {\n    margin: auto 0 auto auto;\n    border: 1px solid var(--default-border-color);\n    border-radius: 3px;\n    display: flex;\n    flex: 0 1;\n    transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95); }\n    :host div.container div.input {\n      display: flex;\n      flex: 1 0; }\n      :host div.container div.input input {\n        flex: 1;\n        margin: auto 0 auto auto;\n        padding: 10px 15px;\n        border: none;\n        outline: 0;\n        background-color: var(--default-bg-color-light, white);\n        color: var(--default-font-color, black); }\n    :host div.container div.control {\n      display: flex;\n      flex: 0 0 auto;\n      color: var(--default-font-color-lighter); }\n      :host div.container div.control wc-icon {\n        cursor: pointer;\n        margin: auto 10px; }\n        :host div.container div.control wc-icon.clearSearch:hover {\n          transform-origin: 40% 54%;\n          transform: rotate(180deg);\n          transition: all 0.3s linear; }\n\n:host([search-expanded]) div.container {\n  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);\n  width: 100%;\n  flex: 1; }\n\n@keyframes wobble {\n  0% {\n    transform: rotate(0); }\n  40% {\n    transform: rotate(20deg); }\n  60% {\n    transform: rotate(-20deg); }\n  100% {\n    transform: rotate(1); } }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabNavigator; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0____ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
+let TabNavigator = class TabNavigator extends __WEBPACK_IMPORTED_MODULE_0____["a" /* BaseComponent */] {
+    // === Init === //
+    _init() {
+        return __awaiter(this, void 0, void 0, function* () { });
+    }
+    _setupEventListeners() { }
+    // === Private === //
+    _tabRowClick(view) {
+        this.manager.router.goToPage(view);
+    }
+    // === Render === //
+    componentStyles() {
+        return (window.__CTRender("style", null, __webpack_require__(46)));
+    }
+    componentMarkup() {
+        if (!this.tabs || !this.tabs.length) {
+            return null;
+        }
+        return (window.__CTRender("div", { className: "container" }, this.tabs.map(x => this._renderTab(x.iconDefinition, x.text, x.view))));
+    }
+    _renderTab(icon, text, view) {
+        if (!this.manager) {
+            return null;
+        }
+        const selected = view.tag === this.manager.router.currentPage.tag ? "selected" : "";
+        return (window.__CTRender("div", { className: `tab ${selected}`, onClick: () => this._tabRowClick(view) },
+            window.__CTRender("div", { className: "icon" },
+                window.__CTRender(__WEBPACK_IMPORTED_MODULE_0____["d" /* Icon */], { icon: icon })),
+            window.__CTRender("div", { className: "text" }, text)));
+    }
+};
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Array, attribute: false, detault: [] })
+], TabNavigator.prototype, "tabs", void 0);
+TabNavigator = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0____["k" /* component */])({ tag: "wc-tab-navigator" })
+], TabNavigator);
+
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// css-to-string-loader: transforms styles from css-loader to a string output
+
+// Get the styles
+var styles = __webpack_require__(47);
+
+if (typeof styles === 'string') {
+  // Return an existing string
+  module.exports = styles;
+} else {
+  // Call the custom toString method from css-loader module
+  module.exports = styles.toString();
+}
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, body {\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n\n:host {\n  color: var(--default-font-color, #333536);\n  font-weight: normal;\n  font-family: var(--default-font-family, Arial, Helvetica, sans-serif); }\n  :host h1, :host h2, :host h3, :host h4, :host h5, :host h6 {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale; }\n\n:host, :host * {\n  box-sizing: border-box; }\n\n:host div.container {\n  display: flex;\n  flex: 0 0;\n  height: 8vh;\n  background-color: var(--default-bg-color-dark);\n  border-top: 1px solid var(--default-border-color); }\n  :host div.container div.tab {\n    flex: 1 1 50%;\n    margin: auto;\n    display: flex;\n    flex-direction: column;\n    color: var(--default-font-color-light); }\n    :host div.container div.tab.selected div.icon, :host div.container div.tab.selected div.text {\n      color: var(--primary-color); }\n    :host div.container div.tab div.icon {\n      margin: auto auto 2px auto; }\n    :host div.container div.tab div.text {\n      margin: auto 0;\n      text-align: center;\n      font-size: 12px; }\n\n@media screen and (max-height: 450px) {\n  :host {\n    display: none; } }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TouchList; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0____ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__client__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__client_slideReveal__ = __webpack_require__(49);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
+
+
+let TouchList = class TouchList extends __WEBPACK_IMPORTED_MODULE_0____["a" /* BaseComponent */] {
     // === Init === //
     _init() {
         return __awaiter(this, void 0, void 0, function* () { });
@@ -1859,7 +2092,7 @@ let TouchList = class TouchList extends __WEBPACK_IMPORTED_MODULE_0_components__
     }
     // === Render === //
     componentStyles() {
-        return (window.__CTRender("style", null, __webpack_require__(44)));
+        return (window.__CTRender("style", null, __webpack_require__(50)));
     }
     componentMarkup() {
         if (!this._renderRow) {
@@ -1874,7 +2107,7 @@ let TouchList = class TouchList extends __WEBPACK_IMPORTED_MODULE_0_components__
             ? this.backgroundButtons.length * 15
             : -1;
         return (window.__CTRender("div", { className: "row" },
-            window.__CTRender("div", { className: "foreground", style: Object(__WEBPACK_IMPORTED_MODULE_1_client__["b" /* buildStyles */])({ transform: "translateX(0vw)" }), onClick: (e) => this._rowClick(e, item), ontouchmove: this.slideEnabled ? (e) => Object(__WEBPACK_IMPORTED_MODULE_2_client_slideReveal__["a" /* slideToReveal */])(e, offset) : null, ontouchend: this.slideEnabled ? (e) => Object(__WEBPACK_IMPORTED_MODULE_2_client_slideReveal__["b" /* slideToRevealEnd */])(e, offset) : null }, this.renderRow(item)),
+            window.__CTRender("div", { className: "foreground", style: Object(__WEBPACK_IMPORTED_MODULE_1__client__["d" /* buildStyles */])({ transform: "translateX(0vw)" }), onClick: (e) => this._rowClick(e, item), ontouchmove: this.slideEnabled ? (e) => Object(__WEBPACK_IMPORTED_MODULE_2__client_slideReveal__["a" /* slideToReveal */])(e, offset) : null, ontouchend: this.slideEnabled ? (e) => Object(__WEBPACK_IMPORTED_MODULE_2__client_slideReveal__["b" /* slideToRevealEnd */])(e, offset) : null }, this.renderRow(item)),
             this.slideEnabled
                 ? this._renderBgButtons(item)
                 : null));
@@ -1883,11 +2116,11 @@ let TouchList = class TouchList extends __WEBPACK_IMPORTED_MODULE_0_components__
         if (!this.backgroundButtons || this.backgroundButtons.length === 0) {
             return null;
         }
-        const styles = Object(__WEBPACK_IMPORTED_MODULE_1_client__["b" /* buildStyles */])({
+        const styles = Object(__WEBPACK_IMPORTED_MODULE_1__client__["d" /* buildStyles */])({
             width: `${this.backgroundButtons.length * 15}vw`
         });
         return (window.__CTRender("div", { className: "background", style: styles }, this.backgroundButtons.map(x => {
-            return (window.__CTRender(__WEBPACK_IMPORTED_MODULE_0_components__["b" /* Button */], { icon: x.icon, iconWidth: x.width, iconHeight: x.height, iconColor: x.iconColor, action: () => x.action(item) }));
+            return (window.__CTRender(__WEBPACK_IMPORTED_MODULE_0____["b" /* Button */], { icon: x.icon, iconWidth: x.width, iconHeight: x.height, iconColor: x.iconColor, action: () => x.action(item) }));
         })));
     }
     _renderNoItems() {
@@ -1899,40 +2132,40 @@ let TouchList = class TouchList extends __WEBPACK_IMPORTED_MODULE_0_components__
     }
 };
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Array, attribute: false, default: [] })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Array, attribute: false, default: [] })
 ], TouchList.prototype, "items", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Function, attribute: false, default: null })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Function, attribute: false, default: null })
 ], TouchList.prototype, "renderRow", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Function, attribute: false, default: null })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Function, attribute: false, default: null })
 ], TouchList.prototype, "rowClick", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Array, attribute: false, default: [] })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Array, attribute: false, default: [] })
 ], TouchList.prototype, "backgroundButtons", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: false, default: true })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: false, default: true })
 ], TouchList.prototype, "slideEnabled", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Function, attribute: false, default: null })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Function, attribute: false, default: null })
 ], TouchList.prototype, "renderWhenEmpty", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: Boolean, attribute: false, default: false })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: Boolean, attribute: false, default: false })
 ], TouchList.prototype, "hideEmptyMessage", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: false, default: null })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: false, default: null })
 ], TouchList.prototype, "emptyMessage", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["k" /* prop */])({ type: String, attribute: false, default: "" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["l" /* prop */])({ type: String, attribute: false, default: "" })
 ], TouchList.prototype, "redraw", void 0);
 TouchList = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0_components__["j" /* component */])({ tag: "wc-touch-list" })
+    Object(__WEBPACK_IMPORTED_MODULE_0____["k" /* component */])({ tag: "wc-touch-list" })
 ], TouchList);
 
 
 
 /***/ }),
-/* 43 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2093,13 +2326,13 @@ function slideAwayEnd(e, leftAction, rightAction, axis = "x", threshold = 5) {
 
 
 /***/ }),
-/* 44 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // css-to-string-loader: transforms styles from css-loader to a string output
 
 // Get the styles
-var styles = __webpack_require__(45);
+var styles = __webpack_require__(51);
 
 if (typeof styles === 'string') {
   // Return an existing string
@@ -2110,7 +2343,7 @@ if (typeof styles === 'string') {
 }
 
 /***/ }),
-/* 45 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -2124,64 +2357,12 @@ exports.push([module.i, "/* FONTS */\n/* BACKGROUND */\n/* BORDERS */\nhtml, bod
 
 
 /***/ }),
-/* 46 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientEvents; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_args__ = __webpack_require__(47);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__event_args__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__event_args__["b"]; });
-var ClientEvents;
-(function (ClientEvents) {
-    // Client Manager Ready
-    ClientEvents["ClientManagerReady"] = "client-manager-ready";
-    // Popout Menu Events
-    ClientEvents["OpenPopoutMenu"] = "open-popout-menu";
-    ClientEvents["ClosePopoutMenu"] = "close-popout-menu";
-})(ClientEvents || (ClientEvents = {}));
-
-
-
-/***/ }),
-/* 47 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_args__ = __webpack_require__(6);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__event_args__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ws_event_args__ = __webpack_require__(48);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__ws_event_args__["a"]; });
-
-
-
-
-/***/ }),
-/* 48 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_events_event_args_event_args__ = __webpack_require__(6);
-
-class WSEventArgs extends __WEBPACK_IMPORTED_MODULE_0_events_event_args_event_args__["a" /* EventArgs */] {
-    // tslint:disable-next-line no-any
-    constructor(action, payload) {
-        super();
-        this.action = action;
-        this.payload = payload;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = WSEventArgs;
-
-
-
-/***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = get;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_handler__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_handler__ = __webpack_require__(53);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__base_handler__["a"]; });
 
 function get(clientManager) {
@@ -2190,7 +2371,7 @@ function get(clientManager) {
 
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

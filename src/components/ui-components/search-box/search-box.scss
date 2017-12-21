@@ -1,0 +1,81 @@
+@import "../../../styles/default.scss";
+
+:host {
+    display: flex;
+
+    div.container {
+        margin: auto 0 auto auto;
+        border: 1px solid var(--default-border-color);
+        border-radius: 3px;
+        display: flex;
+        flex: 0 1;
+        transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+        div.input {
+            display: flex;
+            flex: 1 0;
+
+            input {
+                flex: 1;
+                margin: auto 0 auto auto;
+                padding: 10px 15px;
+                border: none;
+                outline: 0;
+                background-color: var(--default-bg-color-light, white);
+                color: var(--default-font-color, black);
+            }
+        }
+
+        div.control {
+            display: flex;
+            flex: 0 0 auto;
+            color: var(--default-font-color-lighter);
+
+            wc-icon {
+                cursor: pointer;
+                margin: auto 10px;
+
+                &.clearSearch:hover {
+                    // animation: wobble .3s;
+                    transform-origin: 40% 54%;
+                    transform: rotate(180deg);
+                    transition: all 0.3s linear;
+                }
+            }
+        }
+    }
+}
+
+:host([search-expanded]) {
+
+    div.container {
+        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        width: 100%;
+        flex: 1;
+    }
+}
+
+:host([disable-expand]) {
+
+    div.container {
+        flex: 1;
+    }
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(0)
+    }
+
+    40% {
+        transform: rotate(20deg)
+    }
+
+    60% {
+        transform: rotate(-20deg)
+    }
+
+    100% {
+        transform: rotate(1)
+    }
+}

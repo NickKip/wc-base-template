@@ -1,7 +1,10 @@
 export enum HttpVerb {
 
     GET = "get",
-    POST = "post"
+    POST = "post",
+    PUT = "put",
+    PATCH = "patch",
+    DELETE = "delete"
 }
 
 export interface ApiResult<T> {
@@ -9,6 +12,11 @@ export interface ApiResult<T> {
     error: boolean;
     errorMessage: string;
     result: T;
+}
+
+export type RequestHeaders = {
+
+    [key: string]: string;
 }
 
 export type QueryParam = {
@@ -28,6 +36,7 @@ export interface MessageEntity {
     id: string;
     address: string;
     verb: HttpVerb;
+    headers: RequestHeaders,
     queryParams?: QueryParam[];
     body?: RequestBody;
     attemps: number;

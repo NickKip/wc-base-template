@@ -9,14 +9,16 @@ export interface HandlerDescriptor {
     page?: string;
 }
 
-export const enum ClientEvents {
+export class ClientEvents {
 
     // Client Manager Ready
-    ClientManagerReady = "client-manager-ready",
+    static ClientManagerReady: string = "client-manager-ready";
 
     // Popout Menu Events
-    OpenPopoutMenu = "open-popout-menu",
-    ClosePopoutMenu = "close-popout-menu"
+    static OpenPopoutMenu: string = "open-popout-menu";
+    static ClosePopoutMenu: string = "close-popout-menu";
+
+    static SearchComplete: string = "search-complete";
 }
 
 export * from "./event-args";

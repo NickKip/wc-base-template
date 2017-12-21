@@ -9,7 +9,7 @@ export abstract class BaseHandler {
 
     // === Public Props === //
 
-    // public messageType: string = null;
+    public messageType: string = null;
     public eventType: ClientEvents[] = [];
     public filters: string[] = [];
 

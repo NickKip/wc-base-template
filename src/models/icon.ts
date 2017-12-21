@@ -1,7 +1,7 @@
-type IconContainer = {
+export type IconContainer = {
 
-    FontAwesome: {
-        [key: string]: IconDefinition;
+    [key: string]: {
+        [key: string]: IconDefinition
     }
 };
 

@@ -8,9 +8,15 @@ export class TabNavigator extends BaseComponent {
     @prop({ type: Array, attribute: false, detault: [] })
     tabs: TabbedNavigatorButton[];
 
+    private currentViewTag: string;
+
     // === Init === //
 
-    async _init(): Promise<void> {}
+    async _init(): Promise<void> {
+
+        this.currentViewTag = this.manager.router.currentPage.tag;
+    }
+
     _setupEventListeners(): void {}
 
     // === Private === //
@@ -51,12 +57,7 @@ export class TabNavigator extends BaseComponent {
 
     private _renderTab(icon: IconDefinition, text: string, view: ViewRegistration): JSXElement {
 
-        if (!this.manager) {
-
-            return null;
-        }
-
-        const selected: string = view.tag === this.manager.router.currentPage.tag ? "selected" : "";
+        const selected: string = view.tag === this.currentViewTag ? "selected" : "";
 
         return (
             <div className={`tab ${selected}`} onClick={ () => this._tabRowClick(view) }>

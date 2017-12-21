@@ -1,16 +1,16 @@
 import { RestConfig } from "../config/config";
 import { Store } from "../../store/store";
-import { ApiResult, QueryParam, HttpVerb, RequestBody, MessageEntity } from "../../models";
+import { ApiResult, QueryParam, HttpVerb, RequestBody, MessageEntity, RequestHeaders } from "../../models";
 
 export class RestClient {
 
-    // === Private Props === //
+    // === Protected Props === //
 
-    private config: RestConfig;
-    private store: Store;
+    protected config: RestConfig;
+    protected store: Store;
 
-    private headers: Headers;
-    private requestOptions: RequestInit;
+    protected headers: Headers;
+    protected requestOptions: RequestInit;
 
     // === Constructor === //
 
@@ -22,9 +22,14 @@ export class RestClient {
         this._resetRequestOptions();
     }
 
-    // === Private === //
+    // === Protected === //
 
-    private _generateQueryString(queryParams: QueryParam[]): string {
+    protected _generateQueryString(queryParams: QueryParam[]): string {
+
+        if (!queryParams) {
+
+            return "";
+        }
 
         return queryParams.reduce((acc, cur, idx) => {
 
@@ -46,7 +51,7 @@ export class RestClient {
         }, "");
     }
 
-    private _resetRequestOptions(): void {
+    protected _resetRequestOptions(): void {
 
         this.headers = new Headers();
 
@@ -57,11 +62,12 @@ export class RestClient {
     }
 
     // tslint:disable-next-line no-any
-    private async _sendMessage<T>(
+    protected async _sendMessage<T>(
         uri: string,
         method: HttpVerb,
         queryParams: QueryParam[] = [],
         body: RequestBody = {},
+        headers: RequestHeaders = {},
         addToQueue: boolean = false
     ): Promise<ApiResult<T>> {
 
@@ -75,6 +81,7 @@ export class RestClient {
             id: "",
             address: `${this.config.baseUri}${uri}`,
             verb: method,
+            headers: headers,
             queryParams: queryParams,
             body: body,
             attemps: 0,
@@ -91,14 +98,15 @@ export class RestClient {
     }
 
     // tslint:disable-next-line no-any
-    private async _httpRequest<T>(msg: MessageEntity): Promise<ApiResult<T>> {
+    protected async _httpRequest<T>(msg: MessageEntity): Promise<ApiResult<T>> {
 
         let req: RequestInit;
 
         this.requestOptions = {
 
             headers: new Headers({
-                "AccessToken": "TODO: Get this from somewhere..."
+                // "Content-Type": "application/json",
+                ...msg.headers
             })
 
         };

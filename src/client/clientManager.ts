@@ -6,7 +6,10 @@ import { ViewRegistration, ViewRegistrations } from "../views";
 import { WSEventArgs } from "../events/event-args";
 import { AppConfig } from "../client/config/config";
 import { RestClient } from "../client/rest-client/rest-client";
-import { AppClasses } from "../models";
+import { AppClasses, HandlerClasses } from "../models";
+import { InfinityWindow } from "../Globals";
+import { BaseHandler } from "../handlers";
+import { EventArgs } from "../events";
 
 export class ClientManager {
 
@@ -28,6 +31,8 @@ export class ClientManager {
 
     private name: string;
     private appContainer: string;
+    private appClasses: AppClasses;
+    private handlers: HandlerClasses;
 
     private events: EventContainer = {};
 
@@ -46,25 +51,30 @@ export class ClientManager {
 
     // === Constructor === //
 
-    constructor(appContainer: string, defaultView: string, config: AppConfig, views: ViewRegistrations, appClasses: AppClasses) {
+    constructor(appContainer: string, defaultView: string, config: AppConfig, views: ViewRegistrations, appClasses: AppClasses, handlers: HandlerClasses) {
 
         this.name = "infinityFramework";
         this.config = config;
+        this.appClasses = appClasses;
+        this.handlers = handlers;
         this.appContainer = appContainer;
         this.views = views;
         ClientManager.Registrations.set(this.name, this);
 
-        const store: Store = new appClasses.store(this.name);
+        if (!(window as InfinityWindow).cti) {
 
-        this.bootstrap(store);
+            const store: Store = new appClasses.store(this.name);
+            this.bootstrap(store, appClasses);
+        }
     }
 
-    private bootstrap(store: Store): Promise<void> {
+    private bootstrap(store: Store, appClasses: AppClasses): Promise<void> {
 
         return Promise.resolve()
             .then(() => this._setStore(store))
-            .then(() => this._setRestClient())
+            .then(() => this._setRestClient(appClasses))
             .then(() => this._setRouter())
+            .then(() => this._setupHandlers())
             .then(() => this._bindStartupEvents())
             .then(() => {
 
@@ -82,11 +92,11 @@ export class ClientManager {
         });
     }
 
-    private _setRestClient(): Promise<void> {
+    private _setRestClient(appClasses: AppClasses): Promise<void> {
 
         return new Promise<void>(resolve => {
 
-            this.rest = new RestClient(this.config.rest, this.store);
+            this.rest = new appClasses.rest(this.config.rest, this.store);
             resolve();
         });
     }
@@ -96,6 +106,43 @@ export class ClientManager {
         return new Promise<void>(resolve => {
 
             this.router = new Router(this.appContainer, this.views, (view: ViewRegistration) => this.unloadEvents(view));
+            resolve();
+        });
+    }
+
+    private _setupHandlers(): Promise<void> {
+
+        return new Promise(resolve => {
+
+            const handlers: BaseHandler[] = Object.keys(this.handlers).map(x => new this.handlers[x](this));
+
+            handlers.map(handler => {
+
+                if (handler.messageType) {
+
+                    this._messageHandlers.set(handler.messageType, handler);
+                }
+
+                if (handler.eventType && handler.eventType.length) {
+
+                    handler.eventType.forEach(eventType => {
+
+                        this.on(eventType as string, async (e: EventArgs) => {
+
+                            try {
+
+                                await handler.callHandleEvent(eventType, e);
+                            }
+                            catch (ex) {
+
+                                // tslint:disable-next-line no-console
+                                console.error("Error handling event", `Event type: ${eventType.toString()}. ${ex.message || ex}`);
+                            }
+                        }, true);
+                    });
+                }
+            });
+
             resolve();
         });
     }
@@ -184,4 +231,9 @@ export class ClientManager {
     }
 
     // === Public === //
+
+    public triggerBootstrap(): void {
+
+        this.bootstrap(new this.appClasses.store(this.name), this.appClasses);
+    }
 }

@@ -4,6 +4,7 @@ export interface InfinityWindow extends Window {
 
     BotWebSocketHandler: any;
     ClientManager: any;
+    cti: any;
     wc: any;
     PouchDB: any;
     process: any;
